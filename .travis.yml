@@ -1,0 +1,41 @@
+#.travis.yml
+
+language: node_js
+
+sudo: required
+
+dist: trusty
+
+node_js:
+  - "node"
+
+addons:
+    chrome: stable
+
+before_script:
+  - npm install -g @angular/cli
+  - "sudo chown root /opt/google/chrome/chrome-sandbox"
+  - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "enYUbx9NZGT2tovGPqi77a/8flWwf62IpkWhcXdUj0clTEqcwZqvg5mhOSn/flAPwENLc03xuHuhLCwDzAsFEMBl4O98uXnekmlz7Uz8dS0EuQgoFRSMIfZ8SI9BE5zSJi0cIsSMXKEHHBbAoWjewgFxn3GlVBEHobJwK93+n6DHDMVxyt0+cSrsMAPQfv0hN6mX70CuHyIdkSdMBrPYV8xw/zwKraRdC5TZuM+2xC3BCsn2lRMLr9PZFR8QSYvtqYQD/IX7NKCqniI5dYBMmJgYgxEJh/EPctIrQIvTPXLqBNhwUDJNVuvObaYSj++igtv8cu3j9FWGox2hfFcb9ZbF3Zwe07kX5d2X55JADOBNhgWHVrl7fRtZlzfbq8QmKC0GfSXlFL2eISurcjR7iOurRZB6K+ATVUTSu/vAVXfgqU5D5t0r7P+n2VGETXIbYTk3w8roWKAzVsfmTWH9DFahMNp/dx9zYH3xDwJXW6iPXxhNd4ky8gsVLr6RW9knUlI1D/t89uyJ0RYCS52PAGHTCdjJRKEq/qFJhBc+396tzT8X/bWERrVj1L6aAWNXw19JGeNnyrkHPwZjokCm+PQprxtJiYstckmHEpyEov4q43g+HWKTnLApltrGwhmdpG4M3rXegnHB+tZzgJaojVxmAhPx9H6Z61QLFyaNvjU="
+  app: frontend-puma
+  on:
+    repo: Projeto-PUMA/frontend-puma
+cache:
+  directories:
+    - "node_modules"
+
+script:
+  - ng build --prod
+
+after_script:
+  - ng test --watch=false --code-coverage
+
+notifications:
+  email:
+    on_failure: change
+    on_success: change
+webhooks: https://kolkrabbi.heroku.com/hooks/github
