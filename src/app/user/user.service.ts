@@ -16,6 +16,7 @@ export class UserService {
 	private userUrl = '/users';
 
   public getUsers() {
+    console.log(this.http.get<User[]>(this.userUrl));
     return this.http.get<User[]>(this.userUrl);
   }
 
