@@ -15,6 +15,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class RegisterComponent implements OnInit {
 
+  user: User = new User();
+
   constructor(private userService: UserService) {
 
   }
@@ -22,11 +24,10 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  onClick() {
-    this.userService.createUser().subscribe(
-      data => {
-        alert("user created");
-      }
-    );
-  }
+  createUser(): void {
+    this.userService.createUser(this.user)
+        .subscribe( data => {
+          alert("User created successfully.");
+        });
+  };
 }

@@ -24,10 +24,7 @@ export class UserService {
     return this.http.delete(this.userUrl + "/"+ user.id);
   }
 
-  public createUser() {
-    let user: User = new User();
-    user.name = "teste23";
-    user.email = "izaribeiro43@gmail.com";
+  public createUser(user) {
     return this.http.post<User>(this.userUrl, user);
   }
 
