@@ -1,18 +1,22 @@
 <mat-toolbar color="primary">
         <mat-toolbar-row>
-          <span>PLATAFORMA UNIFICADA DE METODOLOGIA ATIVA</span>
-          <span class="spacer"></span>
-            <a routerLinkActive="active" routerLink="/register">
+          <div>
+            <a class="router" routerLink="/">
+              <span>PLATAFORMA UNIFICADA DE METODOLOGIA ATIVA</span>
+          </a>
+        </div>
+              <span class="spacer"></span>
+            <a class="router" routerLinkActive="active" routerLink="/register">
               <button mat-button>
                 <span>REGISTRE-SE </span>
                 <mat-icon>person_add</mat-icon>
               </button>
             </a>
-            <a routerLinkActive="active" routerLink="/users">
+            <a class="router" routerLinkActive="active" routerLink="/users">
               <button mat-button>
                 <span>ENTRAR </span>
                 <mat-icon>account_circle</mat-icon>
-              </button>
+              </button> 
             </a>
         </mat-toolbar-row>
       </mat-toolbar>      
