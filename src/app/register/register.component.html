@@ -1,18 +1,18 @@
 <mat-card class="mat-card">
   <mat-card-title>REGISTRE-SE</mat-card-title>
-  
+
   <div class="form-container">
     <mat-form-field appearance="outline" required>
       <mat-label>Nome*</mat-label>
       <input maxlength="120" matInput>
       <mat-icon matSuffix>account_circle</mat-icon>
-    </mat-form-field>  
+    </mat-form-field>
 
     <!-- <mat-form-field appearance="outline" required>
       <mat-label>CPF*</mat-label>
       <input maxlength="12" matInput>
-      <mat-icon matSuffix>account_box</mat-icon>    
-    </mat-form-field>            
+      <mat-icon matSuffix>account_box</mat-icon>
+    </mat-form-field>
 
       <mat-form-field appearance="outline" required>
       <mat-label>Telefone*</mat-label>
@@ -20,29 +20,29 @@
       <mat-icon matSuffix>phone</mat-icon>
     </mat-form-field>             -->
 
-      <mat-form-field appearance="outline" required>
+    <mat-form-field appearance="outline" required>
       <mat-label>E-mail*</mat-label>
       <input maxlength="70" matInput>
       <mat-icon matSuffix>email</mat-icon>
-    </mat-form-field>            
+    </mat-form-field>
 
-    <mat-form-field appearance="outline" required>
+    <!-- <mat-form-field appearance="outline" required>
       <mat-label>Senha*</mat-label>
       <input maxlength="30" matInput [type]="hide ? 'password' : 'text'">
         <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-    </mat-form-field>            
+    </mat-form-field>
 
     <mat-form-field appearance="outline" required>
         <mat-label>Confirme sua senha*</mat-label>
         <input maxlength="30" matInput [type]="hideConfirm ? 'password' : 'text'">
         <mat-icon matSuffix (click)="hideConfirm = !hideConfirm">{{hideConfirm ? 'visibility' : 'visibility_off'}}</mat-icon>
-      </mat-form-field>            
-    </div>
+      </mat-form-field>
+    </div> -->
 
     <button mat-raised-button	color="primary" (click)="onClick()">CONFIRMAR</button>
-    
-    <div>    
-      <mat-hint>* Campos obrigatorios</mat-hint>    
-    </div>
 
-  </mat-card>
+    <div>
+      <mat-hint>* Campos obrigatorios</mat-hint>
+    </div>
+  </div>
+</mat-card>

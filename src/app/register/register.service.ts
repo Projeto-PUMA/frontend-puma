@@ -9,11 +9,9 @@ const httpOptions = {
 };
 
 @Injectable()
-export class UserService {
+export class RegisterService {
 
   constructor(private http:HttpClient) {}
 
 	private userUrl = '/register';
-
-
 }

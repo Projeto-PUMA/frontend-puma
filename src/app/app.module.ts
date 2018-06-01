@@ -10,6 +10,8 @@ import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
+import { HttpModule } from '@angular/http';
+import { RegisterService } from './register/register.service';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,12 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    HttpModule,
     FormsModule,
     MaterialModule,
     BrowserAnimationsModule
   ],
-  providers: [UserService],
+  providers: [UserService, RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

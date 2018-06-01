@@ -3,7 +3,10 @@ import { MaterialModule } from '../material/material.module'
 import { User } from '../models/user.model';
 import {EventEmitter, Injectable} from "@angular/core";
 import {Http, Response} from "@angular/http";
+import {NgForm} from '@angular/forms';
 import { UserService } from '../user/user.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 @Injectable()
 @Component({
   selector: 'app-register',
@@ -12,12 +15,18 @@ import { UserService } from '../user/user.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService) {
+
+  }
 
   ngOnInit() {
   }
 
-  onClick(){
-    
+  onClick() {
+    this.userService.createUser().subscribe(
+      data => {
+        alert("user created");
+      }
+    );
   }
 }
