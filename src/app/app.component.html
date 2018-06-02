@@ -14,11 +14,18 @@
             </a>
             <a class="router" routerLinkActive="active" routerLink="/users">
               <button mat-button>
-                <span>ENTRAR </span>
+                <div id='dropdown'>
+                  <li class='detail'><a href='#'><span>ENTRAR</span></a>
+                    <ul>
+                        <li><input type="text" placeholder="Name"></li>
+                        <li><input type="text" placeholder="Email"></li>
+                    </ul>
+                  </li>
+                </div>
                 <mat-icon>account_circle</mat-icon>
-              </button> 
+              </button>
             </a>
         </mat-toolbar-row>
-      </mat-toolbar>      
-      
+      </mat-toolbar>
+
 <router-outlet></router-outlet>
