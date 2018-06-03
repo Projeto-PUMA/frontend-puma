@@ -10,7 +10,7 @@
   color: white;
   text-decoration: none;
 }
-
+/* 
 #dropdown {
   border: none;
   border: 0px;
@@ -31,9 +31,6 @@
 #dropdown li {
   float: left;
   padding: 0px;
-}
-
-#dropdown li a {
 }
 
 #dropdown > ul > li > a {
@@ -92,4 +89,12 @@
   background: #8B3E2F;
   color: #ffffff;
   text-decoration: none;
+} */
+
+.mat-form-field{
+  padding-left: 8% !important; 
+}
+
+.btn{
+    padding-left: 30% !important; 
 }
