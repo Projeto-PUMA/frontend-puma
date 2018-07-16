@@ -3,27 +3,51 @@
 
   <div class="form-container">
     <mat-form-field appearance="outline" required>
-      <mat-label>Nome*</mat-label>
+      <mat-label>Nome *</mat-label>
       <input maxlength="120" matInput [(ngModel)]="user.name">
       <mat-icon matSuffix>account_circle</mat-icon>
     </mat-form-field>
 
-    <!-- <mat-form-field appearance="outline" required>
+     <mat-form-field appearance="outline" required>
       <mat-label>CPF*</mat-label>
       <input maxlength="12" matInput>
       <mat-icon matSuffix>account_box</mat-icon>
-    </mat-form-field>
+     </mat-form-field>
 
       <mat-form-field appearance="outline" required>
-      <mat-label>Telefone*</mat-label>
-      <input maxlength="20" matInput>
+      <mat-label>Telefone 1 *</mat-label>
+      <input maxlength="11" matInput [(ngModel)]="user.telefone1">
       <mat-icon matSuffix>phone</mat-icon>
-    </mat-form-field>             -->
+    </mat-form-field>            
 
     <mat-form-field appearance="outline" required>
-      <mat-label>E-mail*</mat-label>
+      <mat-label>Telefone 2 *</mat-label>
+      <input maxlength="11" matInput [(ngModel)]="user.telefone2">
+      <mat-icon matSuffix>phone</mat-icon>
+    </mat-form-field>            
+
+    <mat-form-field appearance="outline" required>
+      <mat-label>Telefone 3</mat-label>
+      <input maxlength="11" matInput [(ngModel)]="user.telefone3">
+      <mat-icon matSuffix>phone</mat-icon>
+    </mat-form-field>            
+
+    <mat-form-field appearance="outline" required>
+      <mat-label>E-mail *</mat-label>
       <input maxlength="70" matInput [(ngModel)]="user.email">
       <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+    
+  <!--   <mat-form-field appearance="outline" required>
+      <mat-select [(ngModel)]="user.escolaridades">
+        <mat-option *ngFor="escolaridades" [value]="escolaridades.value">{{ escolaridades.viewValue }}</mat-option>
+      </mat-select>
+    </mat-form-field> -->
+
+    <mat-form-field appearance="outline" required>
+      <mat-label>Profissão *</mat-label>
+      <input maxlength="70" matInput [(ngModel)]="user.profissao">
+      <mat-icon matSuffix>people</mat-icon>
     </mat-form-field>
 
     <!-- <mat-form-field appearance="outline" required>
