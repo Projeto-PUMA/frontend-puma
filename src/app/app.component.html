@@ -24,11 +24,16 @@
                       </mat-form-field>
                       <mat-form-field appearance="outline" required (click)="$event.stopPropagation()">
                           <mat-label>SENHA</mat-label>
-                          <mat-icon matSuffix (click)="hideConfirm = !hideConfirm">{{hideConfirm ? 'visibility' : 'visibility_off'}}</mat-icon>
-                          <input maxlength="120" matInput (click)="$event.stopPropagation()" (keydown.Tab)="$event.stopPropagation()" (keydown.enter)="$event.stopPropagation()" maxlength="30" matInput [type]="!hideConfirm ? 'password' : 'text'">
+                          <!-- <mat-icon matSuffix (click)="hideConfirm = !hideConfirm">{{hideConfirm ? 'visibility' : 'visibility_off'}}</mat-icon> -->
+                          <input maxlength="120" matInput (click)="$event.stopPropagation()" (keydown.Tab)="$event.stopPropagation()" (keydown.enter)="$event.stopPropagation()" maxlength="30" matInput >
+                          <!--[type]="!hideConfirm ? 'password' : 'text'"-->
+                          <!-- o [type] na linha acima estava na tag <input> na linha acima dela -->
                       </mat-form-field>
                       <div class="btn">
-                      <button mat-raised-button color="primary" (keydown.Tab)="$event.stopPropagation()" (click)="showMsg()">
+                      <button mat-raised-button color="primary" (keydown.Tab)="$event.stopPropagation()" >
+                          <!-- (click)="showMsg()"-->
+                          <!-- o (click) que esta localizado na linha acima estava contido dentro da tag button localizada na linha
+                          acima da linha comentada com o click -->
              CONFIRMAR
              </button>
             </div>

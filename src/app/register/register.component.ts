@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MaterialModule } from '../material/material.module'
-import { User } from '../models/user.model';
+import { User, DegreeOptions } from '../models/user.model';
 import {EventEmitter, Injectable} from "@angular/core";
 import {Http, Response} from "@angular/http";
 import {NgForm} from '@angular/forms';
@@ -16,6 +16,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class RegisterComponent implements OnInit {
 
   user: User = new User();
+  degreeOptions: Array<Object> = DegreeOptions;
 
   constructor(private userService: UserService) {
 

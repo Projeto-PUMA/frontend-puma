@@ -12,6 +12,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { HttpModule } from '@angular/http';
 import { RegisterService } from './register/register.service';
+import { MatSelectModule, MatOptionModule, MatIconModule } from '@angular/material'
 
 @NgModule({
   declarations: [
@@ -27,7 +28,10 @@ import { RegisterService } from './register/register.service';
     HttpModule,
     FormsModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatIconModule
   ],
   providers: [UserService, RegisterService],
   bootstrap: [AppComponent]

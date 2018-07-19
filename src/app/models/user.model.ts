@@ -1,21 +1,22 @@
-export interface Escolaridade {
-  value: string;
+export interface Degree {
+  value: Number;
   viewValue: string;
 }
 
 export class User {
   name: string;
   email: string;
-  escolaridades : Escolaridade[] = [
-    {value: 'EnsinoFundamentalCompleto-0', viewValue: 'Ensino Fundamental Completo'},
-    {value: 'EnsinoFundamentalIncompleto-1', viewValue: 'Ensino Fundamental Incompleto'},
-    {value: 'EnsinoMédioCompleto-2', viewValue: 'Ensino Médio Completo'},
-    {value: 'EnsinoMédioIncompleto-3', viewValue: 'Ensino Médio Incompleto'},
-    {value: 'EnsinoSuperiorCompleto-4', viewValue: 'Ensino Superior Completo'},
-    {value: 'EnsinoSuperiorIncompleto-5', viewValue: 'Ensino Superior Incompleto'}
-  ];
-  profissao: string;
-  telefone1: string;
-  telefone2: string;
-  telefone3: string;
+  degree: Degree;
+  profession: string;
+  phone1: string;
+  phone2: string;
 }
+
+export const DegreeOptions: Degree[] = [
+  {value: 0, viewValue: 'Ensino Fundamental Completo'},
+  {value: 1, viewValue: 'Ensino Fundamental Incompleto'},
+  {value: 2, viewValue: 'Ensino Médio Completo'},
+  {value: 3, viewValue: 'Ensino Médio Incompleto'},
+  {value: 4, viewValue: 'Ensino Superior Completo'},
+  {value: 5, viewValue: 'Ensino Superior Incompleto'}
+];

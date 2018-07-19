@@ -16,19 +16,13 @@
 
       <mat-form-field appearance="outline" required>
       <mat-label>Telefone 1 *</mat-label>
-      <input maxlength="11" matInput [(ngModel)]="user.telefone1">
+      <input maxlength="11" matInput [(ngModel)]="user.phone1">
       <mat-icon matSuffix>phone</mat-icon>
     </mat-form-field>            
 
     <mat-form-field appearance="outline" required>
-      <mat-label>Telefone 2 *</mat-label>
-      <input maxlength="11" matInput [(ngModel)]="user.telefone2">
-      <mat-icon matSuffix>phone</mat-icon>
-    </mat-form-field>            
-
-    <mat-form-field appearance="outline" required>
-      <mat-label>Telefone 3</mat-label>
-      <input maxlength="11" matInput [(ngModel)]="user.telefone3">
+      <mat-label>Telefone 2</mat-label>
+      <input maxlength="11" matInput [(ngModel)]="user.phone2">
       <mat-icon matSuffix>phone</mat-icon>
     </mat-form-field>            
 
@@ -38,15 +32,16 @@
       <mat-icon matSuffix>email</mat-icon>
     </mat-form-field>
     
-  <!--   <mat-form-field appearance="outline" required>
-      <mat-select [(ngModel)]="user.escolaridades">
-        <mat-option *ngFor="escolaridades" [value]="escolaridades.value">{{ escolaridades.viewValue }}</mat-option>
+    <mat-form-field appearance="outline" required>
+      <mat-label>Nível de Escolaridade</mat-label>
+      <mat-select [(ngModel)]="user.degree">
+        <mat-option *ngFor="let options of degreeOptions" [value]="options">{{ options.viewValue }}</mat-option>
       </mat-select>
-    </mat-form-field> -->
+    </mat-form-field>
 
     <mat-form-field appearance="outline" required>
       <mat-label>Profissão *</mat-label>
-      <input maxlength="70" matInput [(ngModel)]="user.profissao">
+      <input maxlength="70" matInput [(ngModel)]="user.profession">
       <mat-icon matSuffix>people</mat-icon>
     </mat-form-field>
 
