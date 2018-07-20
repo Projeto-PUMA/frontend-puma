@@ -26,6 +26,7 @@ export class RegisterComponent implements OnInit {
   }
 
   createUser(): void {
+   // this.degreeOptions = this.user.degree;
     this.userService.createUser(this.user)
         .subscribe( data => {
           alert("User created successfully.");
