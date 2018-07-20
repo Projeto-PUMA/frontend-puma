@@ -6,6 +6,7 @@ export interface Degree {
 export class User {
   name: string;
   email: string;
+  cpf: string;
   degree: string;
   profession: string;
   phone1: string;
