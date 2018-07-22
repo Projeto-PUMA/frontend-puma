@@ -12,7 +12,10 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { HttpModule } from '@angular/http';
 import { RegisterService } from './register/register.service';
-import { MatSelectModule, MatOptionModule, MatIconModule } from '@angular/material'
+import { MatSelectModule, MatOptionModule, MatIconModule } from '@angular/material';
+import { StudentComponent } from './user/student/student.component';
+import { AdminComponent } from './user/admin/admin.component';
+import { ExternalAgentComponent } from './user/external-agent/external-agent.component'
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import { MatSelectModule, MatOptionModule, MatIconModule } from '@angular/materi
     UserComponent,
     RegisterComponent,
     HomeComponent,
+    StudentComponent,
+    AdminComponent,
+    ExternalAgentComponent,
   ],
   imports: [
     BrowserModule,
