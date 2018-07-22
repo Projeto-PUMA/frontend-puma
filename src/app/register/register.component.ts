@@ -17,9 +17,9 @@ export class RegisterComponent implements OnInit {
 
   user: User = new User();
   degreeOptions: Array<Object> = DegreeOptions;
-
+  hide = true;
+  hideConfirm = true;
   constructor(private userService: UserService) {
-
   }
 
   ngOnInit() {
@@ -31,5 +31,6 @@ export class RegisterComponent implements OnInit {
         .subscribe( data => {
           alert("User created successfully.");
         });
-  };
+
+      };
 }

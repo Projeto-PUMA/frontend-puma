@@ -1,67 +1,65 @@
 <mat-card class="mat-card">
   <mat-card-title>REGISTRE-SE</mat-card-title>
-
   <div class="form-container">
     <mat-form-field appearance="outline" required>
-      <mat-label>Nome *</mat-label>
-      <input maxlength="120" matInput [(ngModel)]="user.name">
+      <mat-label>Nome </mat-label>
+      <input maxlength="120" matInput [(ngModel)]="user.name" required>
       <mat-icon matSuffix>account_circle</mat-icon>
     </mat-form-field>
 
      <mat-form-field appearance="outline" required>
-      <mat-label>CPF*</mat-label>
-      <input maxlength="12" matInput>
+      <mat-label>CPF</mat-label>
+      <input maxlength="12" matInput required>
       <mat-icon matSuffix>account_box</mat-icon>
      </mat-form-field>
 
       <mat-form-field appearance="outline" required>
-      <mat-label>Telefone 1 *</mat-label>
-      <input maxlength="11" matInput [(ngModel)]="user.phone1">
+      <mat-label>Telefone 1 </mat-label>
+      <input maxlength="11" matInput [(ngModel)]="user.phone1" required>
       <mat-icon matSuffix>phone</mat-icon>
     </mat-form-field>            
 
     <mat-form-field appearance="outline" required>
       <mat-label>Telefone 2</mat-label>
-      <input maxlength="11" matInput [(ngModel)]="user.phone2">
+      <input maxlength="11" matInput [(ngModel)]="user.phone2" >
       <mat-icon matSuffix>phone</mat-icon>
     </mat-form-field>            
 
     <mat-form-field appearance="outline" required>
-      <mat-label>E-mail *</mat-label>
-      <input maxlength="70" matInput [(ngModel)]="user.email">
+      <mat-label>E-mail </mat-label>
+      <input maxlength="70" matInput [(ngModel)]="user.email" required>
       <mat-icon matSuffix>email</mat-icon>
     </mat-form-field>
     
     <mat-form-field appearance="outline" required>
       <mat-label>Nível de Escolaridade</mat-label>
-      <mat-select [(ngModel)]="user.degree">
+      <mat-select [(ngModel)]="user.degree" required>
         <mat-option *ngFor="let options of degreeOptions" [value]="options.viewValue">{{ options.viewValue }}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="outline" required>
-      <mat-label>Profissão *</mat-label>
-      <input maxlength="70" matInput [(ngModel)]="user.profession">
+      <mat-label>Profissão </mat-label>
+      <input maxlength="70" matInput [(ngModel)]="user.profession" required>
       <mat-icon matSuffix>people</mat-icon>
     </mat-form-field>
 
-    <!-- <mat-form-field appearance="outline" required>
-      <mat-label>Senha*</mat-label>
-      <input maxlength="30" matInput [type]="hide ? 'password' : 'text'">
+    <mat-form-field appearance="outline" required>
+      <mat-label>Senha</mat-label>
+      <input maxlength="30" matInput [type]="hide ? 'password' : 'text'" required type="password">
         <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
     </mat-form-field>
 
     <mat-form-field appearance="outline" required>
-        <mat-label>Confirme sua senha*</mat-label>
-        <input maxlength="30" matInput [type]="hideConfirm ? 'password' : 'text'">
+        <mat-label>Confirme sua senha</mat-label>
+        <input maxlength="30" matInput [type]="hideConfirm ? 'password' : 'text'" [(ngModel)]="user.password">
         <mat-icon matSuffix (click)="hideConfirm = !hideConfirm">{{hideConfirm ? 'visibility' : 'visibility_off'}}</mat-icon>
       </mat-form-field>
-    </div> -->
-
-    <button mat-raised-button	color="primary" (click)="createUser()">CONFIRMAR</button>
-
+    
+    
+    <button mat-raised-button	color="primary" (click)="createUser()" [disabled]="">CONFIRMAR</button>
     <div>
-      <mat-hint>* Campos obrigatorios</mat-hint>
+      <mat-hint> * Campos obrigatorios</mat-hint>
     </div>
   </div>
 </mat-card>
