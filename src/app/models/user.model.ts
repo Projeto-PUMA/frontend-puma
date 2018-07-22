@@ -11,6 +11,7 @@ export class User {
   profession: string;
   phone1: string;
   phone2: string;
+  password: string;
 }
 
 export const DegreeOptions: Degree[] = [
