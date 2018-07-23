@@ -15,7 +15,8 @@ import { RegisterService } from './register/register.service';
 import { MatSelectModule, MatOptionModule, MatIconModule } from '@angular/material';
 import { StudentComponent } from './user/student/student.component';
 import { AdminComponent } from './user/admin/admin.component';
-import { ExternalAgentComponent } from './user/external-agent/external-agent.component'
+import { ExternalAgentComponent } from './user/external-agent/external-agent.component';
+import { TextMaskModule } from 'angular2-text-mask';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ExternalAgentComponent } from './user/external-agent/external-agent.com
     BrowserAnimationsModule,
     MatSelectModule,
     MatOptionModule,
-    MatIconModule
+    MatIconModule,
+    TextMaskModule,
   ],
   providers: [UserService, RegisterService],
   bootstrap: [AppComponent]
