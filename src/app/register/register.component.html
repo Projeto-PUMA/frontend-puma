@@ -9,7 +9,7 @@
 
      <mat-form-field appearance="outline" required>
       <mat-label>CPF</mat-label>
-      <input [textMask]="{mask: cpfmask}" matInput required>   
+      <input [textMask]="{mask: cpfmask}" matInput [(ngModel)]="user.cpf" required>   
       <mat-icon matSuffix>account_box</mat-icon>
      </mat-form-field>
 
