@@ -9,19 +9,19 @@
 
      <mat-form-field appearance="outline" required>
       <mat-label>CPF</mat-label>
-      <input maxlength="12" matInput required>
+      <input [textMask]="{mask: cpfmask}" matInput required>   
       <mat-icon matSuffix>account_box</mat-icon>
      </mat-form-field>
 
-      <mat-form-field appearance="outline" required>
-      <mat-label>Telefone 1 </mat-label>
-      <input maxlength="11" matInput [(ngModel)]="user.phone1" required>
-      <mat-icon matSuffix>phone</mat-icon>
-    </mat-form-field>            
+    <mat-form-field appearance="outline" required>
+        <mat-label> Telefone Celular </mat-label>
+        <input [textMask]="{mask: cellphonemask}" matInput [(ngModel)]="user.phone1" required>
+        <mat-icon matSuffix>phone</mat-icon>
+    </mat-form-field>       
 
     <mat-form-field appearance="outline" required>
-      <mat-label>Telefone 2</mat-label>
-      <input maxlength="11" matInput [(ngModel)]="user.phone2" >
+      <mat-label> Telefone Fixo </mat-label>
+      <input [textMask]="{mask: phonemask}" matInput [(ngModel)]="user.phone2" >
       <mat-icon matSuffix>phone</mat-icon>
     </mat-form-field>            
 

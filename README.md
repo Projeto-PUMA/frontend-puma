@@ -1,3 +1,4 @@
+![travis](https://travis-ci.org/Projeto-PUMA/frontend-puma.svg?branch=development)
 # FrontendPuma
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
