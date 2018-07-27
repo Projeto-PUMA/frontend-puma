@@ -1,33 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
 <mat-card class="mat-card">
   <mat-card-title>REGISTRE-SE</mat-card-title>
   <div class="form-container">
     <mat-form-field appearance="outline" required>
       <mat-label>Nome </mat-label>
-      <input maxlength="120" matInput [(ngModel)]="user.name" required>
+      <input type="text" maxlength="120" matInput [(ngModel)]="user.name" required>
+      <mat-error *ngIf="name.invalid">{{getErrorMessageName()}}</mat-error>
       <mat-icon matSuffix>account_circle</mat-icon>
     </mat-form-field>
 
      <mat-form-field appearance="outline" required>
       <mat-label>CPF</mat-label>
-      <input [textMask]="{mask: cpfmask}" matInput [(ngModel)]="user.cpf" required>   
+      <input type="text" [textMask]="{mask: cpfmask}" matInput [(ngModel)]="user.cpf" required> 
+      <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>  
       <mat-icon matSuffix>account_box</mat-icon>
      </mat-form-field>
 
     <mat-form-field appearance="outline" required>
         <mat-label> Telefone Celular </mat-label>
         <input [textMask]="{mask: cellphonemask}" matInput [(ngModel)]="user.phone1" required>
+        <mat-error *ngIf="phone1.invalid">{{getErrorMessagePhone1()}}</mat-error>  
         <mat-icon matSuffix>phone</mat-icon>
     </mat-form-field>       
 
     <mat-form-field appearance="outline" required>
       <mat-label> Telefone Fixo </mat-label>
       <input [textMask]="{mask: phonemask}" matInput [(ngModel)]="user.phone2" >
+      <mat-error *ngIf="phone2.invalid">{{getErrorMessagePhone2()}}</mat-error>  
       <mat-icon matSuffix>phone</mat-icon>
     </mat-form-field>            
 
     <mat-form-field appearance="outline" required>
       <mat-label>E-mail </mat-label>
-      <input maxlength="70" matInput [(ngModel)]="user.email" required>
+      <input type="email" maxlength="70" matInput [(ngModel)]="user.email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
       <mat-icon matSuffix>email</mat-icon>
     </mat-form-field>
     
@@ -36,18 +43,20 @@
       <mat-select [(ngModel)]="user.degree" required>
         <mat-option *ngFor="let options of degreeOptions" [value]="options.viewValue">{{ options.viewValue }}</mat-option>
       </mat-select>
+      <mat-error *ngIf="degree.invalid">{{getErrorMessageDegree()}}</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline" required>
       <mat-label>Profissão </mat-label>
       <input maxlength="70" matInput [(ngModel)]="user.profession" required>
+      <mat-error *ngIf="profession.invalid">{{getErrorMessageProfession()}}</mat-error>
       <mat-icon matSuffix>people</mat-icon>
     </mat-form-field>
 
     <mat-form-field appearance="outline" required>
       <mat-label>Senha</mat-label>
       <input maxlength="30" matInput [type]="hide ? 'password' : 'text'" required type="password">
-        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
     </mat-form-field>
 
     <mat-form-field appearance="outline" required>
@@ -57,9 +66,10 @@
       </mat-form-field>
     
     
-    <button mat-raised-button	color="primary" (click)="createUser()" [disabled]="">CONFIRMAR</button>
+    <button mat-raised-button	color="primary" type="submit" (click)="createUser()" [disabled]="">CONFIRMAR</button>
     <div>
       <mat-hint> * Campos obrigatorios</mat-hint>
     </div>
   </div>
 </mat-card>
+</html>
