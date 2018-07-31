@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -17,7 +18,7 @@ import { StudentComponent } from './user/student/student.component';
 import { AdminComponent } from './user/admin/admin.component';
 import { ExternalAgentComponent } from './user/external-agent/external-agent.component';
 import { TextMaskModule } from 'angular2-text-mask';
-import { CarouselSliderComponent } from './home/carousel-slider/carousel-slider.component';
+import { NgbdCarouselConfig } from './home/carousel-slider/carousel-slider.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { CarouselSliderComponent } from './home/carousel-slider/carousel-slider.
     StudentComponent,
     AdminComponent,
     ExternalAgentComponent,
-    CarouselSliderComponent,
+    NgbdCarouselConfig,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +43,7 @@ import { CarouselSliderComponent } from './home/carousel-slider/carousel-slider.
     MatOptionModule,
     MatIconModule,
     TextMaskModule,
+    NgbModule.forRoot(),
   ],
   providers: [UserService, RegisterService],
   bootstrap: [AppComponent]
