@@ -18,6 +18,7 @@ import { AdminComponent } from './user/admin/admin.component';
 import { ExternalAgentComponent } from './user/external-agent/external-agent.component';
 import { TextMaskModule } from 'angular2-text-mask';
 import { CarouselSliderComponent } from './home/carousel-slider/carousel-slider.component';
+import { MaterializeModule } from 'angular2-materialize';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { CarouselSliderComponent } from './home/carousel-slider/carousel-slider.
     MatOptionModule,
     MatIconModule,
     TextMaskModule,
+    MaterializeModule,
   ],
   providers: [UserService, RegisterService],
   bootstrap: [AppComponent]
