@@ -20,6 +20,11 @@
   left: 15px;
 	position: absolute;
 }
+
+.mat-toolbar.mat-primary {
+  background: #000000;
+  opacity: 0.7;
+}
 /* 
 #dropdown {
   border: none;

@@ -13,13 +13,15 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { HttpModule } from '@angular/http';
 import { RegisterService } from './register/register.service';
-import { MatSelectModule, MatOptionModule, MatIconModule } from '@angular/material';
+import { MatSelectModule, MatOptionModule, MatIconModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatListModule } from '@angular/material';
 import { StudentComponent } from './user/student/student.component';
 import { AdminComponent } from './user/admin/admin.component';
 import { ExternalAgentComponent } from './user/external-agent/external-agent.component';
 import { TextMaskModule } from 'angular2-text-mask';
 import { NgbdCarouselConfig } from './home/carousel-slider/carousel-slider.component';
-
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,7 @@ import { NgbdCarouselConfig } from './home/carousel-slider/carousel-slider.compo
     AdminComponent,
     ExternalAgentComponent,
     NgbdCarouselConfig,
+    MainNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,12 @@ import { NgbdCarouselConfig } from './home/carousel-slider/carousel-slider.compo
     MatIconModule,
     TextMaskModule,
     NgbModule.forRoot(),
+    FlexLayoutModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
   ],
   providers: [UserService, RegisterService],
   bootstrap: [AppComponent]

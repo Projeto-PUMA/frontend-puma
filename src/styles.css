@@ -11,6 +11,14 @@ body {
     text-align: center;
   }
   
+  mat-toolbar {
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%  !important;
+  }
   mat-toolbar-row {
     justify-content: space-between;
   }
@@ -22,3 +30,4 @@ body {
     color: white;
   }
   
+body { margin: 0; }
