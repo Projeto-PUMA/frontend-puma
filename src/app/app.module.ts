@@ -43,11 +43,7 @@ import { NgbdCarouselConfig } from './home/carousel-slider/carousel-slider.compo
     MatOptionModule,
     MatIconModule,
     TextMaskModule,
-<<<<<<< HEAD
     NgbModule.forRoot(),
-=======
-    MaterializeModule,
->>>>>>> d47a0e59ee2a05e3076be61c4955b77d5b52c50f
   ],
   providers: [UserService, RegisterService],
   bootstrap: [AppComponent]
