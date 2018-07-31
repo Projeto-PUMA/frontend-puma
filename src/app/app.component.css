@@ -3,12 +3,22 @@
 }
 
 .spacer {
-  flex: 1 1 auto;
+  flex:  auto;
 }
 
 .router{
   color: white;
   text-decoration: none;
+  font-size: 17px;
+}
+
+.sub{
+  color: white;
+  text-decoration: none;
+  font-size: 10px;
+  top: 33px;
+  left: 15px;
+	position: absolute;
 }
 /* 
 #dropdown {
