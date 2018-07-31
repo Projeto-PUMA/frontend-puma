@@ -19,8 +19,6 @@ import { AdminComponent } from './user/admin/admin.component';
 import { ExternalAgentComponent } from './user/external-agent/external-agent.component';
 import { TextMaskModule } from 'angular2-text-mask';
 import { NgbdCarouselConfig } from './home/carousel-slider/carousel-slider.component';
-import { FlexLayoutModule } from "@angular/flex-layout";
-import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 @NgModule({
   declarations: [
@@ -32,7 +30,6 @@ import { LayoutModule } from '@angular/cdk/layout';
     AdminComponent,
     ExternalAgentComponent,
     NgbdCarouselConfig,
-    MainNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +44,6 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatIconModule,
     TextMaskModule,
     NgbModule.forRoot(),
-    FlexLayoutModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
