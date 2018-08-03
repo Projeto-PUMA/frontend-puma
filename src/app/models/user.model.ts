@@ -20,5 +20,9 @@ export const DegreeOptions: Degree[] = [
   {value: 2, viewValue: 'Ensino Médio Completo'},
   {value: 3, viewValue: 'Ensino Médio Incompleto'},
   {value: 4, viewValue: 'Ensino Superior Completo'},
-  {value: 5, viewValue: 'Ensino Superior Incompleto'}
+  {value: 5, viewValue: 'Ensino Superior Incompleto'},
+  {value: 6, viewValue: 'Mestrando(a)'},
+  {value: 7, viewValue: 'Mestre(a)'},
+  {value: 8, viewValue: 'Doutorando(a)'},
+  {value: 9, viewValue: 'Doutor(a)'}
 ];

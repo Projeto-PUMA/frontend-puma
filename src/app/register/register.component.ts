@@ -38,32 +38,32 @@ export class RegisterComponent implements OnInit {
   errorMessageProfession: string;
 
   getErrorMessageName() {
-    this.errorMessageName = 'Campo não pode ser vazio.';
+    this.errorMessageName = 'Campo Obrigatório';
     if(this.name.hasError('required')){
       return this.errorMessageName;
     }
   }
   
   getErrorMessageCpf() {
-    return this.cpf.hasError('required') ? 'Campo não pode ser vazio.' :
+    return this.cpf.hasError('required') ? 'Campo Obrigatório' :
         this.cpf.hasError('cpf') ? 'CPF inválido.' :
             '';
   }
 
   getErrorMessagePhone1() {
-    return this.phone1.hasError('required') ? 'Campo não pode ser vazio.' :
+    return this.phone1.hasError('required') ? 'Campo Obrigatório' :
         this.phone1.hasError('phone1') ? 'Telefone inválido.' :
             '';
   }
 
   getErrorMessagePhone2() {
-    return this.phone2.hasError('required') ? 'Campo não pode ser vazio.' :
-        this.phone2.hasError('phone2') ? 'Telefone inválido.' :
+    return this.phone2.hasError('required') ? 'Campo Obrigatório' :
+        this.phone2.hasError('phone2') ? 'Campo Obrigatório' :
             '';
   }
 
   getErrorMessageEmail() {
-    return this.email.hasError('required') ? 'Campo não pode ser vazio.' :
+    return this.email.hasError('required') ? 'Campo Obrigatório' :
         this.email.hasError('email') ? 'Email deve estar no formato usuario@email.com.' :
             '';
   }
@@ -76,7 +76,7 @@ export class RegisterComponent implements OnInit {
   }
 
   getErrorMessageProfession() {
-    this.errorMessageProfession = 'Campo não pode ser vazio.';
+    this.errorMessageProfession = 'Campo Obrigatório';
     if(this.profession.hasError('required')){
       return this.errorMessageProfession;
     }
@@ -88,7 +88,7 @@ export class RegisterComponent implements OnInit {
    // this.degreeOptions = this.user.degree;
     this.userService.createUser(this.user)
         .subscribe( data => {
-          alert("User created successfully.");
+          alert("Usuário Criado com Sucesso.");
         });
 
       };
