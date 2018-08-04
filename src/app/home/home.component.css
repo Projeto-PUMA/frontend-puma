@@ -2,3 +2,20 @@
     background-color: white;
     text-align: center;
 }
+.column {
+    float: left;
+    width: 33.33%;
+    background-color: rgb(65, 63, 63);
+    color: white;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.bannerPsp{
+    background-color: rgb(65, 63, 63);
+}
+.bestProjects{
+    margin-top: 125px;
+}
