@@ -7,6 +7,7 @@ import {NgForm} from '@angular/forms';
 import { UserService } from '../user/user.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {FormControl, Validators} from '@angular/forms';
+import { INVALID } from '@angular/forms/src/model';
 
 @Injectable()
 @Component({
@@ -43,7 +44,7 @@ export class RegisterComponent implements OnInit {
       return this.errorMessageName;
     }
   }
-  
+
   getErrorMessageCpf() {
     return this.cpf.hasError('required') ? 'Campo Obrigatório' :
         this.cpf.hasError('cpf') ? 'CPF inválido.' :
@@ -76,10 +77,24 @@ export class RegisterComponent implements OnInit {
   }
 
   getErrorMessageProfession() {
+    this.errorMessageProfession = 'Senha deve ter no mínimo 6 carácteres';
+    if(this.profession.hasError('required')){
+      return this.errorMessageProfession;
+    }
+  }
+
+  getErrorMessagePassword2() {
     this.errorMessageProfession = 'Campo Obrigatório';
     if(this.profession.hasError('required')){
       return this.errorMessageProfession;
     }
+  }
+  getErrorMessagePassword1() {
+    return this.errorMessageProfession;
+  }
+
+  getErrorMessagePasswordConfirm() {
+    return this.errorMessageProfession;
   }
   ngOnInit() {
   }
