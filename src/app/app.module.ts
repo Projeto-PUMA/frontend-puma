@@ -21,11 +21,15 @@ import { ExternalAgentComponent } from './user/external-agent/external-agent.com
 import { TextMaskModule } from 'angular2-text-mask';
 import { NgbdCarouselConfig } from './home/carousel-slider/carousel-slider.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import {LoginComponent} from './login/login.component'
+import { AuthenticationService } from './authentication.service';
+
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     RegisterComponent,
+    LoginComponent,
     HomeComponent,
     StudentComponent,
     AdminComponent,
@@ -51,7 +55,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatSidenavModule,
     MatListModule,
   ],
-  providers: [UserService, RegisterService, AdminService],
+  providers: [UserService, RegisterService, AdminService, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
