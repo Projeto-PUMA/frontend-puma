@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { AppRoutingModule } from './app.routing.module';
 import { UserService } from './user/user.service';
+import { AdminService } from './user/admin/admin.service';
 import { HttpClientModule } from "@angular/common/http";
 import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -50,7 +51,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatSidenavModule,
     MatListModule,
   ],
-  providers: [UserService, RegisterService],
+  providers: [UserService, RegisterService, AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
