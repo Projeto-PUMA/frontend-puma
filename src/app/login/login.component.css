@@ -1,0 +1,20 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+.form-container > * {
+    width: 100%;
+}
+
+.mat-card{
+        width:400px;
+}
+  
+.mat-hint{
+    font-size:10px;
+}
+
+.mat-error{
+    font-size:10px;
+}
