@@ -1,37 +1,4 @@
 <html>
-<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-
-<mat-toolbar color="primary" *ngIf='showNav'>
-          <div>
-            <a class="router" routerLink="/admin">
-              <span>PUMA</span>
-          </a>
-        </div>
-        <a class="imgLogo" routerLink="/">
-          <img src="/assets/imgs/logo.png" alt="logo" height="80" width="110"> 
-    </a>
-
-    <span class="spacer"></span>
-
-    <a class="router" routerLinkActive="active" routerLink="/register">
-        <button mat-button>
-            <span>REGISTRE-SE </span>
-            <mat-icon>person_add</mat-icon>
-        </button>
-    </a>
-    <a class="router" routerLinkActive="active" routerLink="/login">
-        <button mat-button>
-            <span>ENTRAR</span>
-            <mat-icon>person</mat-icon>
-        </button>
-    </a>
-
-    <div>
-        <a class="sub">
-            <span>PLATAFORMA UNIFICADA DE METODOLOGIA ATIVA</span>
-        </a>
-    </div>
-</mat-toolbar>
-
+<app-landing></app-landing>
 <router-outlet></router-outlet>
 </html>

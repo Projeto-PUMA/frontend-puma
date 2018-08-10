@@ -11,7 +11,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
-import { HomeComponent } from './home/home.component';
 import { HttpModule } from '@angular/http';
 import { RegisterService } from './register/register.service';
 import { MatSelectModule, MatOptionModule, MatIconModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatListModule } from '@angular/material';
@@ -19,10 +18,13 @@ import { StudentComponent } from './user/student/student.component';
 import { AdminComponent } from './user/admin/admin.component';
 import { ExternalAgentComponent } from './user/external-agent/external-agent.component';
 import { TextMaskModule } from 'angular2-text-mask';
-import { NgbdCarouselConfig } from './home/carousel-slider/carousel-slider.component';
+import { NgbdCarouselConfig } from './landing/carousel-slider/carousel-slider.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import {LoginComponent} from './login/login.component'
 import { AuthenticationService } from './authentication.service';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LandingComponent } from './landing/landing.component';
+import { NavbarService } from './navbar/navbar.service';
 
 @NgModule({
   declarations: [
@@ -30,11 +32,12 @@ import { AuthenticationService } from './authentication.service';
     UserComponent,
     RegisterComponent,
     LoginComponent,
-    HomeComponent,
     StudentComponent,
     AdminComponent,
     ExternalAgentComponent,
     NgbdCarouselConfig,
+    NavbarComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,7 @@ import { AuthenticationService } from './authentication.service';
     MatSidenavModule,
     MatListModule,
   ],
-  providers: [UserService, RegisterService, AdminService, AuthenticationService],
+  providers: [UserService, RegisterService, AdminService, AuthenticationService, NavbarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
