@@ -11,7 +11,9 @@ export class LandingComponent implements OnInit {
   constructor(public nav: NavbarService) { }
 
   ngOnInit() {
-    this.nav.show();  
+    this.nav.show();
+    this.nav.showLogin();
+    this.nav.showRegister();
   }
 
 }

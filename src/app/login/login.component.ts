@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
  
 import { AuthenticationService } from '../authentication.service';
+import { NavbarService } from '../navbar/navbar.service';
  
 @Component({
     selector: 'app-login',
@@ -16,11 +17,15 @@ export class LoginComponent implements OnInit {
  
     constructor(
         private router: Router,
-        private authenticationService: AuthenticationService) { }
+        private authenticationService: AuthenticationService,
+        public nav: NavbarService) { }
  
     ngOnInit() {
         // reset login status
         this.authenticationService.logout();
+        this.nav.show();
+        this.nav.hideLogin();
+        this.nav.showRegister();
     }
  
     login() {

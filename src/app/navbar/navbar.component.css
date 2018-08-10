@@ -1,0 +1,27 @@
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .spacer {
+    flex:  auto;
+  }
+  
+  .router{
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .sub{
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+    top: 40px;
+    left: 15px;
+      position: absolute;
+  }
+  
+  .mat-toolbar.mat-primary {
+    background: transparent;
+  }
+  
