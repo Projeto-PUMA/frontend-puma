@@ -35,7 +35,7 @@
 
     <mat-form-field appearance="outline" required>
       <mat-label>E-mail </mat-label>
-      <input type="email" maxlength="70" matInput [(ngModel)]="user.email" required>
+      <input type="email" maxlength="100" matInput [(ngModel)]="user.email" required required email>
       <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
       <mat-icon matSuffix>email</mat-icon>
     </mat-form-field>
@@ -70,7 +70,7 @@
       </mat-form-field>
     
     
-    <button mat-raised-button	color="primary" type="submit" (click)="createUser()" [disabled]="">CONFIRMAR</button>
+    <button mat-raised-button	color="primary" type="submit" (click)="createUser()" [disabled] = "">CONFIRMAR</button>
     <div>
       <mat-hint> * Campos obrigatorios</mat-hint>
     </div>
