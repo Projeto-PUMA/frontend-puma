@@ -1,0 +1,12 @@
+.responsive {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.auth-container{
+    height: 100vh;
+    width: 100vw;
+  
+  }

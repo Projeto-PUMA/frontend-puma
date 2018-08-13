@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { UserComponent } from './user/user.component';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
-import {HomeComponent} from './home/home.component'
-import { ProjectSubmissionComponent } from './project-submission/project-submission.component';
-
+import { LoginComponent } from './login/login.component';
+import { LandingComponent } from './landing/landing.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {ProjectSubmissionComponent} from './project-submission/project-submission.component';
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: LandingComponent },
   { path: 'register', component: RegisterComponent },
+  {path: 'login', component: LoginComponent},
+  {path: 'dashboard', component: DashboardComponent},
   { path: 'submeterprojeto', component: ProjectSubmissionComponent },
 
 ];
