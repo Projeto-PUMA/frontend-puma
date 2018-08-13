@@ -9,7 +9,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {FormControl, Validators} from '@angular/forms';
 import { INVALID } from '@angular/forms/src/model';
 import { NavbarService } from '../navbar/navbar.service';
-
 @Injectable()
 @Component({
   selector: 'app-register',
@@ -20,7 +19,7 @@ import { NavbarService } from '../navbar/navbar.service';
 export class RegisterComponent implements OnInit {
   constructor( public nav: NavbarService) {
   }
-  
+
   public cpfmask = [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-' , /\d/, /\d/];
   public cellphonemask = ['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
   public phonemask = ['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];

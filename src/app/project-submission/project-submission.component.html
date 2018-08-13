@@ -1,3 +1,10 @@
-<p>
-  project-submission works!
-</p>
+<!DOCTYPE html>
+<html lang="pt-br">
+<app-navbar></app-navbar>
+<div class="auth-container">
+  <mat-card class="mat-card">
+    <mat-card-title>SUBMETER PROJETO</mat-card-title>
+    <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx">
+</mat-card>
+</div>
+</html>
