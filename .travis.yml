@@ -14,8 +14,10 @@ addons:
 
 before_script:
   - npm install -g @angular/cli
+  - npm i angular2-text-mask --save
   - "sudo chown root /opt/google/chrome/chrome-sandbox"
   - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
+
 
 deploy:
   provider: heroku
