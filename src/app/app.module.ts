@@ -20,6 +20,7 @@ import { ExternalAgentComponent } from './user/external-agent/external-agent.com
 import { TextMaskModule } from 'angular2-text-mask';
 import { NgbdCarouselConfig } from './home/carousel-slider/carousel-slider.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { ProjectSubmissionComponent } from './project-submission/project-submission.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     AdminComponent,
     ExternalAgentComponent,
     NgbdCarouselConfig,
+    ProjectSubmissionComponent,
   ],
   imports: [
     BrowserModule,
