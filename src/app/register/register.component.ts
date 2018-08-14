@@ -40,68 +40,68 @@ export class RegisterComponent implements OnInit {
   phonePrincipal = new FormControl('', [Validators.required]); //
   phoneAlternative = new FormControl('', [Validators.required]); //
 
-  // errorMessageName: string;
-  // errorMessageDegree: string;
-  // errorMessageProfession: string;
+  errorMessageName: string;
+  errorMessageDegree: string;
+  errorMessageProfession: string;
 
-  // getErrorMessageName() {
-  //   this.errorMessageName = 'Campo Obrigatório';
-  //   if(this.name.hasError('required')){
-  //     return this.errorMessageName;
-  //   }
-  // }
+  getErrorMessageName() {
+    this.errorMessageName = 'Campo Obrigatório';
+    if(this.name.hasError('required')){
+      return this.errorMessageName;
+    }
+  }
 
-  // getErrorMessageCpf() {
-  //   return this.cpf.hasError('required') ? 'Campo Obrigatório' :
-  //       this.cpf.hasError('cpf') ? 'CPF inválido.' :
-  //           '';
-  // }
+  getErrorMessageCpf() {
+    return this.username.hasError('required') ? 'Campo Obrigatório' :
+        this.username.hasError('cpf') ? 'CPF inválido.' :
+            '';
+  }
 
-  // getErrorMessagePhone1() {
-  //   return this.phone1.hasError('required') ? 'Campo Obrigatório' :
-  //       this.phone1.hasError('phone1') ? 'Telefone inválido.' :
-  //           '';
-  // }
+  getErrorMessagePhone1() {
+    return this.phonePrincipal.hasError('required') ? 'Campo Obrigatório' :
+        this.phonePrincipal.hasError('phone1') ? 'Telefone inválido.' :
+            '';
+  }
 
-  // getErrorMessagePhone2() {
-  //   return this.phone2.hasError('required') ? 'Campo Obrigatório' :
-  //       this.phone2.hasError('phone2') ? 'Campo Obrigatório' :
-  //           '';
-  // }
+  getErrorMessagePhone2() {
+    return this.phoneAlternative.hasError('required') ? 'Campo Obrigatório' :
+        this.phoneAlternative.hasError('phone2') ? 'Campo Obrigatório' :
+            '';
+  }
 
-  // getErrorMessageEmail() {
-  //   return this.email.hasError('required') ? 'Campo Obrigatório e e-mail deve estar no formato usuario@email.com.' :
-  //       this.email.hasError('email') ? 'Email deve estar no formato usuario@email.com.' :
-  //           '';
-  // }
+  getErrorMessageEmail() {
+    return this.email.hasError('required') ? 'Campo Obrigatório e e-mail deve estar no formato usuario@email.com.' :
+        this.email.hasError('email') ? 'Email deve estar no formato usuario@email.com.' :
+            '';
+  }
 
-  // getErrorMessageDegree() {
-  //   this.errorMessageDegree = 'Selecione uma opção.';
-  //   if(this.degree.hasError('required')){
-  //     return this.errorMessageDegree;
-  //   }
-  // }
+  getErrorMessageDegree() {
+    this.errorMessageDegree = 'Selecione uma opção.';
+    if(this.education.hasError('required')){
+      return this.errorMessageDegree;
+    }
+  }
 
-  // getErrorMessageProfession() {
-  //   this.errorMessageProfession = 'Senha deve ter no mínimo 6 carácteres';
-  //   if(this.profession.hasError('required')){
-  //     return this.errorMessageProfession;
-  //   }
-  // }
+  getErrorMessageProfession() {
+    this.errorMessageProfession = 'Senha deve ter no mínimo 6 carácteres';
+    if(this.profession.hasError('required')){
+      return this.errorMessageProfession;
+    }
+  }
 
-  // getErrorMessagePassword2() {
-  //   this.errorMessageProfession = 'Campo Obrigatório';
-  //   if(this.profession.hasError('required')){
-  //     return this.errorMessageProfession;
-  //   }
-  // }
-  // getErrorMessagePassword1() {
-  //   return this.errorMessageProfession;
-  // }
+  getErrorMessagePassword2() {
+    this.errorMessageProfession = 'Campo Obrigatório';
+    if(this.profession.hasError('required')){
+      return this.errorMessageProfession;
+    }
+  }
+  getErrorMessagePassword1() {
+    return this.errorMessageProfession;
+  }
 
-  // getErrorMessagePasswordConfirm() {
-  //   return this.errorMessageProfession;
-  // }
+  getErrorMessagePasswordConfirm() {
+    return this.errorMessageProfession;
+  }
 
   ngOnInit() {
     this.nav.show();
