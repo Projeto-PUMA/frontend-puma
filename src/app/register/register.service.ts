@@ -17,5 +17,5 @@ export class RegisterService {
 
   public createUser(user) {
     return this.http.post<User>(this.userUrl, user);
-}
   }
+}

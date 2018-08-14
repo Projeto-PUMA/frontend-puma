@@ -20,7 +20,7 @@ import { NavbarService } from '../navbar/navbar.service';
 export class RegisterComponent implements OnInit {
   constructor( public nav: NavbarService, private registerService : RegisterService) {
   }
-  
+
   public cpfmask = [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-' , /\d/, /\d/];
   public cellphonemask = ['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
   public phonemask = ['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
@@ -29,75 +29,79 @@ export class RegisterComponent implements OnInit {
   degreeOptions: Array<Object> = DegreeOptions;
   hide = true;
   hideConfirm = true;
-  name = new FormControl('', [Validators.required]);
-  errorMessageName: string;
-  cpf = new FormControl('', [Validators.required]);
-  phone1 = new FormControl('', [Validators.required]);
-  phone2 = new FormControl('', [Validators.required]);
-  email = new FormControl('', [Validators.required, Validators.email]);
-  degree = new FormControl('', [Validators.required]);
-  errorMessageDegree: string;
-  profession = new FormControl('', [Validators.required]);
-  errorMessageProfession: string;
 
-  getErrorMessageName() {
-    this.errorMessageName = 'Campo Obrigatório';
-    if(this.name.hasError('required')){
-      return this.errorMessageName;
-    }
-  }
+  cep = new FormControl('', [Validators.required]); //
+  fullAddress = new FormControl('', [Validators.required]); //
+  username = new FormControl('', [Validators.required]); //
+  name = new FormControl('', [Validators.required]); //
+  email = new FormControl('', [Validators.required, Validators.email]); //
+  education = new FormControl('', [Validators.required]); //
+  profession = new FormControl('', [Validators.required]); //
+  phonePrincipal = new FormControl('', [Validators.required]); //
+  phoneAlternative = new FormControl('', [Validators.required]); //
 
-  getErrorMessageCpf() {
-    return this.cpf.hasError('required') ? 'Campo Obrigatório' :
-        this.cpf.hasError('cpf') ? 'CPF inválido.' :
-            '';
-  }
+  // errorMessageName: string;
+  // errorMessageDegree: string;
+  // errorMessageProfession: string;
 
-  getErrorMessagePhone1() {
-    return this.phone1.hasError('required') ? 'Campo Obrigatório' :
-        this.phone1.hasError('phone1') ? 'Telefone inválido.' :
-            '';
-  }
+  // getErrorMessageName() {
+  //   this.errorMessageName = 'Campo Obrigatório';
+  //   if(this.name.hasError('required')){
+  //     return this.errorMessageName;
+  //   }
+  // }
 
-  getErrorMessagePhone2() {
-    return this.phone2.hasError('required') ? 'Campo Obrigatório' :
-        this.phone2.hasError('phone2') ? 'Campo Obrigatório' :
-            '';
-  }
+  // getErrorMessageCpf() {
+  //   return this.cpf.hasError('required') ? 'Campo Obrigatório' :
+  //       this.cpf.hasError('cpf') ? 'CPF inválido.' :
+  //           '';
+  // }
 
-  getErrorMessageEmail() {
-    return this.email.hasError('required') ? 'Campo Obrigatório e e-mail deve estar no formato usuario@email.com.' :
-        this.email.hasError('email') ? 'Email deve estar no formato usuario@email.com.' :
-            '';
-  }
+  // getErrorMessagePhone1() {
+  //   return this.phone1.hasError('required') ? 'Campo Obrigatório' :
+  //       this.phone1.hasError('phone1') ? 'Telefone inválido.' :
+  //           '';
+  // }
 
-  getErrorMessageDegree() {
-    this.errorMessageDegree = 'Selecione uma opção.';
-    if(this.degree.hasError('required')){
-      return this.errorMessageDegree;
-    }
-  }
+  // getErrorMessagePhone2() {
+  //   return this.phone2.hasError('required') ? 'Campo Obrigatório' :
+  //       this.phone2.hasError('phone2') ? 'Campo Obrigatório' :
+  //           '';
+  // }
 
-  getErrorMessageProfession() {
-    this.errorMessageProfession = 'Senha deve ter no mínimo 6 carácteres';
-    if(this.profession.hasError('required')){
-      return this.errorMessageProfession;
-    }
-  }
+  // getErrorMessageEmail() {
+  //   return this.email.hasError('required') ? 'Campo Obrigatório e e-mail deve estar no formato usuario@email.com.' :
+  //       this.email.hasError('email') ? 'Email deve estar no formato usuario@email.com.' :
+  //           '';
+  // }
 
-  getErrorMessagePassword2() {
-    this.errorMessageProfession = 'Campo Obrigatório';
-    if(this.profession.hasError('required')){
-      return this.errorMessageProfession;
-    }
-  }
-  getErrorMessagePassword1() {
-    return this.errorMessageProfession;
-  }
+  // getErrorMessageDegree() {
+  //   this.errorMessageDegree = 'Selecione uma opção.';
+  //   if(this.degree.hasError('required')){
+  //     return this.errorMessageDegree;
+  //   }
+  // }
 
-  getErrorMessagePasswordConfirm() {
-    return this.errorMessageProfession;
-  }
+  // getErrorMessageProfession() {
+  //   this.errorMessageProfession = 'Senha deve ter no mínimo 6 carácteres';
+  //   if(this.profession.hasError('required')){
+  //     return this.errorMessageProfession;
+  //   }
+  // }
+
+  // getErrorMessagePassword2() {
+  //   this.errorMessageProfession = 'Campo Obrigatório';
+  //   if(this.profession.hasError('required')){
+  //     return this.errorMessageProfession;
+  //   }
+  // }
+  // getErrorMessagePassword1() {
+  //   return this.errorMessageProfession;
+  // }
+
+  // getErrorMessagePasswordConfirm() {
+  //   return this.errorMessageProfession;
+  // }
 
   ngOnInit() {
     this.nav.show();
@@ -105,7 +109,8 @@ export class RegisterComponent implements OnInit {
     this.nav.hideRegister();
   }
 
-   createUser(): void {
+   createUser() {
+     console.log(this.user);
      this.registerService.createUser(this.user)
          .subscribe( data => {
            alert("Usuário Criado com Sucesso.");
