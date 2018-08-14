@@ -13,5 +13,9 @@ export class RegisterService {
 
   constructor(private http:HttpClient) {}
 
-	private userUrl = '/register';
+  private userUrl = '/register';
+
+  public createUser(user) {
+    return this.http.post<User>(this.userUrl, user);
 }
+  }

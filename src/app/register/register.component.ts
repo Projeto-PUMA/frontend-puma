@@ -4,7 +4,7 @@ import { User, DegreeOptions } from '../models/user.model';
 import {EventEmitter, Injectable} from "@angular/core";
 import {Http, Response} from "@angular/http";
 import {NgForm} from '@angular/forms';
-// import { UserService } from '../user/user.service';
+import { RegisterService } from '../register/register.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {FormControl, Validators} from '@angular/forms';
 import { INVALID } from '@angular/forms/src/model';
@@ -18,7 +18,7 @@ import { NavbarService } from '../navbar/navbar.service';
 })
 
 export class RegisterComponent implements OnInit {
-  constructor( public nav: NavbarService) {
+  constructor( public nav: NavbarService, private registerService : RegisterService) {
   }
   
   public cpfmask = [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-' , /\d/, /\d/];
@@ -66,7 +66,7 @@ export class RegisterComponent implements OnInit {
   }
 
   getErrorMessageEmail() {
-    return this.email.hasError('required') ? 'Campo Obrigatório' :
+    return this.email.hasError('required') ? 'Campo Obrigatório e e-mail deve estar no formato usuario@email.com.' :
         this.email.hasError('email') ? 'Email deve estar no formato usuario@email.com.' :
             '';
   }
@@ -105,11 +105,10 @@ export class RegisterComponent implements OnInit {
     this.nav.hideRegister();
   }
 
-  // createUser(): void {
-  //  // this.degreeOptions = this.user.degree;
-  //   this.userService.createUser(this.user)
-  //       .subscribe( data => {
-  //         alert("Usuário Criado com Sucesso.");
-  //       });
-  //     };
+   createUser(): void {
+     this.registerService.createUser(this.user)
+         .subscribe( data => {
+           alert("Usuário Criado com Sucesso.");
+         });
+       };
 }
