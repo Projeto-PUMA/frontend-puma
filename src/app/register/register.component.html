@@ -14,24 +14,38 @@
 
      <mat-form-field appearance="outline" required>
       <mat-label>CPF</mat-label>
-      <input type="text" [textMask]="{mask: cpfmask}" matInput [(ngModel)]="user.cpf" required> 
-      <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>  
+      <input type="text" [textMask]="{mask: cpfmask}" matInput [(ngModel)]="user.username" required>
+      <mat-error *ngIf="username.invalid">{{getErrorMessageCpf()}}</mat-error>
       <mat-icon matSuffix>account_box</mat-icon>
      </mat-form-field>
 
+     <mat-form-field appearance="outline" required>
+      <mat-label>CEP</mat-label>
+      <input type="text" [textMask]="{mask: cepmask}" matInput [(ngModel)]="user.cep" required>
+      <mat-error *ngIf="cep.invalid">{{getErrorMessageCpf()}}</mat-error>
+      <mat-icon matSuffix>explore</mat-icon>
+     </mat-form-field>
+
+     <mat-form-field appearance="outline" required>
+      <mat-label>Endereco </mat-label>
+      <input type="text" maxlength="120" matInput [(ngModel)]="user.fullAddress" required>
+      <mat-error *ngIf="name.invalid">{{getErrorMessageName()}}</mat-error>
+      <mat-icon matSuffix>home</mat-icon>
+    </mat-form-field>
+
     <mat-form-field appearance="outline" required>
         <mat-label> Telefone Celular </mat-label>
-        <input [textMask]="{mask: cellphonemask}" matInput [(ngModel)]="user.phone1" required>
-        <mat-error *ngIf="phone1.invalid">{{getErrorMessagePhone1()}}</mat-error>  
+        <input [textMask]="{mask: cellphonemask}" matInput [(ngModel)]="user.phonePrincipal" required>
+        <mat-error *ngIf="phonePrincipal.invalid">{{getErrorMessagePhone1()}}</mat-error>
         <mat-icon matSuffix>phone</mat-icon>
-    </mat-form-field>       
+    </mat-form-field>
 
     <mat-form-field appearance="outline" required>
       <mat-label> Telefone Fixo </mat-label>
-      <input [textMask]="{mask: phonemask}" matInput [(ngModel)]="user.phone2" >
-      <mat-error *ngIf="phone2.invalid">{{getErrorMessagePhone2()}}</mat-error>  
+      <input [textMask]="{mask: phonemask}" matInput [(ngModel)]="user.phoneAlternative" >
+      <mat-error *ngIf="phoneAlternative.invalid">{{getErrorMessagePhone2()}}</mat-error>
       <mat-icon matSuffix>phone</mat-icon>
-    </mat-form-field>            
+    </mat-form-field>
 
     <mat-form-field appearance="outline" required>
       <mat-label>E-mail </mat-label>
@@ -39,13 +53,13 @@
       <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
       <mat-icon matSuffix>email</mat-icon>
     </mat-form-field>
-    
+
     <mat-form-field appearance="outline" required>
       <mat-label>Nível de Escolaridade</mat-label>
-      <mat-select [(ngModel)]="user.degree" required>
+      <mat-select [(ngModel)]="user.education" required>
         <mat-option *ngFor="let options of degreeOptions" [value]="options.viewValue">{{ options.viewValue }}</mat-option>
       </mat-select>
-      <mat-error *ngIf="degree.invalid">{{getErrorMessageDegree()}}</mat-error>
+      <mat-error *ngIf="education.invalid">{{getErrorMessageDegree()}}</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline" required>
@@ -65,12 +79,10 @@
     <mat-form-field appearance="outline" required>
         <mat-label>Confirme sua senha</mat-label>
         <input maxlength="30" matInput [type]="hideConfirm ? 'password' : 'text'" [(ngModel)]="user.passwordConfirm" required>
-        <!-- <mat-error *ngIf="password!passwordConfirm">{{getErrorMessagePasswordConfirm()}}</mat-error> -->
+        <mat-error *ngIf="password!passwordConfirm">{{getErrorMessagePasswordConfirm()}}</mat-error>
         <mat-icon matSuffix (click)="hideConfirm = !hideConfirm">{{hideConfirm ? 'visibility' : 'visibility_off'}}</mat-icon>
       </mat-form-field>
-    
-    
-    <!-- <button mat-raised-button	color="primary" type="submit" (click)="createUser()" [disabled] = "">CONFIRMAR</button> -->
+    <button mat-raised-button	color="primary" type="submit" (click)="createUser()" [disabled] = "">CONFIRMAR</button>
     <div>
       <mat-hint> * Campos obrigatorios</mat-hint>
     </div>

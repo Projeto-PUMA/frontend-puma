@@ -4,15 +4,16 @@ export interface Degree {
 }
 
 export class User {
-  name: string;
+  cep: string;
+  education: string;
   email: string;
-  cpf: string;
-  degree: string;
-  profession: string;
-  phone1: string;
-  phone2: string;
+  fullAddress: string;
+  name: string;
   password: string;
-  passwordConfirm: string;
+  phoneAlternative: string;
+  phonePrincipal: string;
+  profession: string;
+  username: string;
 }
 
 export const DegreeOptions: Degree[] = [
