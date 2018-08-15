@@ -21,7 +21,7 @@
 
      <mat-form-field appearance="outline" required>
       <mat-label>CEP</mat-label>
-      <input type="text" maxlength="9" matInput [(ngModel)]="user.cep" required>
+      <input type="text" [textMask]="{mask: cepmask}" matInput [(ngModel)]="user.cep" required>
       <mat-error *ngIf="cep.invalid">{{getErrorMessageCpf()}}</mat-error>
       <mat-icon matSuffix>explore</mat-icon>
      </mat-form-field>

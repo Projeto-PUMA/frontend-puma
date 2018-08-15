@@ -24,6 +24,7 @@ export class RegisterComponent implements OnInit {
   public cpfmask = [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-' , /\d/, /\d/];
   public cellphonemask = ['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
   public phonemask = ['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
+  public cepmask  = [/\d/, /\d/, /\d/, /\d/, /\d/, '-' , /\d/, /\d/, /\d/];
 
   user: User = new User();
   degreeOptions: Array<Object> = DegreeOptions;

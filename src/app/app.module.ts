@@ -19,8 +19,9 @@ import { AuthenticationService } from './authentication.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LandingComponent } from './landing/landing.component';
 import { NavbarService } from './navbar/navbar.service';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
+import { DashboardService } from './dashboard/dashboard.service';
+import { DashboardComponent } from './dashboard/dashboard.component'; 
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { AdminComponent } from './dashboard/admin/admin.component';
     MatSidenavModule,
     MatListModule,
   ],
-  providers: [RegisterService, AuthenticationService, NavbarService],
+  providers: [RegisterService, AuthenticationService, NavbarService, DashboardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
