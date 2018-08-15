@@ -35,13 +35,15 @@
       <!-- <mat-error *ngIf="degree.invalid">{{getErrorMessageDegree()}}</mat-error> -->
     </mat-form-field>
     <br>
-    <mat-form-field appearance="outline" required *ngIf="submission.pspNumber!='7'" >
+    <div *ngIf="submission.pspNumber !=  '7'">
+    <mat-form-field appearance="outline" required  >
       <mat-label>Sub-Área de Aplicação</mat-label>
       <mat-select [(ngModel)]="submission.applicationArea" name="area" required >
         <mat-option  *ngFor="let suboptions of pspSubOption[submission.pspNumber]"[value]="suboptions">{{suboptions}}</mat-option>
       </mat-select>
       <!-- <mat-error *ngIf="degree.invalid">{{getErrorMessageDegree()}}</mat-error> -->
     </mat-form-field>
+  </div>
     <br>
     <mat-form-field appearance="outline" required>
       <mat-label>Nome Fantasia</mat-label>
