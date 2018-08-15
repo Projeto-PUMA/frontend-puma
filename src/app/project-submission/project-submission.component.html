@@ -1,10 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <app-navbar></app-navbar>
-<div class="auth-container">
+<form>
+<div class="auth-container form-container">
   <mat-card class="mat-card">
     <mat-card-title>SUBMETER PROJETO</mat-card-title>
-    <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx">
-</mat-card>
+    <br>
+    <mat-form-field appearance="outline" required>
+      <mat-label>Nome do Projeto</mat-label>
+      <input type="text" required matInput> 
+      <!-- <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>   -->
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="outline" required>
+      <mat-label>Resumo do Projeto</mat-label>
+      <textarea name="" id="" cols="50" rows="10" placeholder="Faça um resumo do projeto neste campo" matInput required></textarea>
+      <!-- <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>   -->
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="outline" required>
+      <mat-label>Problemática</mat-label>
+      <textarea name="" id="" cols="50" rows="10" placeholder="Problemática do Projeto" matInput required></textarea>
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="outline" required>
+      <mat-label>Área de Aplicação</mat-label>
+      <mat-select [(ngModel)]="submission.pspNumber" name="psp" required>
+        <mat-option *ngFor="let options of pspNumbers" [value]="options.number">{{ options.description }}</mat-option>
+      </mat-select>
+      <!-- <mat-error *ngIf="degree.invalid">{{getErrorMessageDegree()}}</mat-error> -->
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline" required>
+      <mat-label>Sub-Área de Aplicação</mat-label>
+      <mat-select [(ngModel)]="submission.applicationArea" name="area" required>
+        <mat-option *ngFor="let suboptions of pspSubOptions" [value]="suboptions">{{ suboptions[options.number] }}</mat-option>
+      </mat-select>
+      <!-- <mat-error *ngIf="degree.invalid">{{getErrorMessageDegree()}}</mat-error> -->
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline" required>
+      <mat-label>CNPJ</mat-label>
+      <input type="text" [textMask]="{mask: cnpjmask}" required matInput> 
+      <!-- <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>   -->
+      <mat-icon matSuffix>account_box</mat-icon>
+     </mat-form-field>
+     <br>
+     
+    <label for="docInput">Arquivo Projeto</label>
+    <br>
+     <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx,.ppt,pptx,.pptm" id="docInput">
+  
+  </mat-card>  
 </div>
+</form>
 </html>
