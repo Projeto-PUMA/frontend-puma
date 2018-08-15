@@ -5,7 +5,7 @@ import { AuthenticationService } from '../authentication.service';
 import { NavbarService } from '../navbar/navbar.service';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Project, pspOptions, Psp } from '../models/project.model';
+import { Project, pspOptions, Psp, pspSubOptions } from '../models/project.model';
 @Component({
   selector: 'app-project-submission',
   templateUrl: './project-submission.component.html',
@@ -13,10 +13,12 @@ import { Project, pspOptions, Psp } from '../models/project.model';
 })
 export class ProjectSubmissionComponent implements OnInit {
 
-  public cnpjmask = [/(\d{2})/, '.', /(\d{3})/, /(\d{3})/, '/', /(\d{4})/, '-', /(\d{2})/];
+  public cnpjmask = [/([0-9]{2})/, '.', /(\d{3})/, /(\d{3})/, '/', /(\d{4})/, '-', /(\d{2})/];
 
   submission: Project = new Project();
   pspNumbers: Psp[] = pspOptions;
+  pspSubOption: Array<Object> = pspSubOptions;
+  iterationPsp = [0, 1, 2, 3, 4, 5, 6];
 
 
   constructor(

@@ -28,24 +28,41 @@
       <mat-select [(ngModel)]="submission.pspNumber" name="psp" required>
         <mat-option *ngFor="let options of pspNumbers" [value]="options.number">{{ options.description }}</mat-option>
       </mat-select>
+      <!-- <mat-label>Sub-Área de Aplicação</mat-label>
+      <mat-select [(ngModel)]="submission.applicationArea" name="area" required>
+        <mat-option *ngFor="let suboptions of pspSubOption[0]" [value]="suboptions">{{suboptions}}</mat-option>
+      </mat-select> -->
       <!-- <mat-error *ngIf="degree.invalid">{{getErrorMessageDegree()}}</mat-error> -->
     </mat-form-field>
     <br>
-    <mat-form-field appearance="outline" required>
+    <mat-form-field appearance="outline" required >
       <mat-label>Sub-Área de Aplicação</mat-label>
-      <mat-select [(ngModel)]="submission.applicationArea" name="area" required>
-        <mat-option *ngFor="let suboptions of pspSubOptions" [value]="suboptions">{{ suboptions[options.number] }}</mat-option>
+      <mat-select [(ngModel)]="submission.applicationArea" name="area" required >
+        <mat-option  *ngFor="let suboptions of pspSubOption[submission.pspNumber]"[value]="suboptions">{{suboptions}}</mat-option>
       </mat-select>
       <!-- <mat-error *ngIf="degree.invalid">{{getErrorMessageDegree()}}</mat-error> -->
     </mat-form-field>
     <br>
     <mat-form-field appearance="outline" required>
+      <mat-label>Nome Fantasia</mat-label>
+      <input type="text" required matInput> 
+      <!-- <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>   -->
+     </mat-form-field>
+     <br>
+    <mat-form-field appearance="outline" required>
+      <mat-label>Razão Social</mat-label>
+      <input type="text" required matInput> 
+      <!-- <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>   -->
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="outline" required>
       <mat-label>CNPJ</mat-label>
       <input type="text" [textMask]="{mask: cnpjmask}" required matInput> 
       <!-- <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>   -->
       <mat-icon matSuffix>account_box</mat-icon>
      </mat-form-field>
      <br>
+     
      
     <label for="docInput">Arquivo Projeto</label>
     <br>
