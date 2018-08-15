@@ -24,11 +24,12 @@ export interface Psp {
 export const pspOptions: Psp[] = [
     {description: 'PSP1 - Probabilidade e Estatística', number: 0 },
     {description: 'PSP2 - Sistemas de Informação', number: 1},
-    {description: 'PSP3 - ', number: 2},
+    {description: 'PSP3 - Livre ', number: 2},
     {description: 'PSP4 - Planejamento e Controle da Produção', number: 3},
     {description: 'PSP5 - Gestão da Qualidade', number: 4},
     {description: 'PSP6 - Engenharia do Produto', number: 5},
     {description: 'PSP7 - Gestão Estratégica', number: 6},
+    {description: 'Não sei em qual categoria meu projeto se encaixa', number:7},
 ];
 
 export const psp1SubOptions: Array<string> = [
@@ -43,7 +44,6 @@ export const psp2SubOptions: Array<string> = [
 ];
 
 export const psp3SubOptions: Array<string> = [
-    '',
     'Outras',
 ];
 

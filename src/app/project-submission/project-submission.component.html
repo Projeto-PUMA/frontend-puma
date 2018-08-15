@@ -14,13 +14,13 @@
      <br>
      <mat-form-field appearance="outline" required>
       <mat-label>Resumo do Projeto</mat-label>
-      <textarea name="" id="" cols="50" rows="10" placeholder="Faça um resumo do projeto neste campo" matInput required></textarea>
+      <textarea class="textarea" name="" id="" cols="50" rows="7" placeholder="Faça um resumo do projeto neste campo" matInput required></textarea>
       <!-- <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>   -->
      </mat-form-field>
      <br>
      <mat-form-field appearance="outline" required>
       <mat-label>Problemática</mat-label>
-      <textarea name="" id="" cols="50" rows="10" placeholder="Problemática do Projeto" matInput required></textarea>
+      <textarea class="textarea" name="" id="" cols="50" rows="7" placeholder="Problemática do Projeto" matInput required></textarea>
      </mat-form-field>
      <br>
      <mat-form-field appearance="outline" required>
@@ -35,7 +35,7 @@
       <!-- <mat-error *ngIf="degree.invalid">{{getErrorMessageDegree()}}</mat-error> -->
     </mat-form-field>
     <br>
-    <mat-form-field appearance="outline" required >
+    <mat-form-field appearance="outline" required *ngIf="submission.pspNumber!='7'" >
       <mat-label>Sub-Área de Aplicação</mat-label>
       <mat-select [(ngModel)]="submission.applicationArea" name="area" required >
         <mat-option  *ngFor="let suboptions of pspSubOption[submission.pspNumber]"[value]="suboptions">{{suboptions}}</mat-option>
