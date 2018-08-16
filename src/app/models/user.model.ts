@@ -14,6 +14,7 @@ export class User {
   phonePrincipal: string;
   profession: string;
   username: string;
+  passwordConfirm: string;
 }
 
 export const DegreeOptions: Degree[] = [
