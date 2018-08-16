@@ -78,8 +78,8 @@
 
     <mat-form-field appearance="outline" required>
         <mat-label>Confirme sua senha</mat-label>
-        <input maxlength="30" matInput  type="password" [type]="hideConfirm ? 'password' : 'text'"[(ngModel)]="user.passwordConfirm" required>
-        <mat-error *ngIf="user.passwordConfirm!==user.password">{{getErrorMessagePasswordConfirm()}}</mat-error>
+        <input maxlength="30" matInput [type]="hideConfirm ? 'password' : 'text'" [(ngModel)]="user.passwordConfirm" required>
+        <!-- <mat-error *ngIf="password!passwordConfirm">{{getErrorMessagePasswordConfirm()}}</mat-error> -->
         <mat-icon matSuffix (click)="hideConfirm = !hideConfirm">{{hideConfirm ? 'visibility' : 'visibility_off'}}</mat-icon>
       </mat-form-field>
     <button mat-raised-button	color="primary" type="submit" (click)="createUser()" [disabled] = "">CONFIRMAR</button>
