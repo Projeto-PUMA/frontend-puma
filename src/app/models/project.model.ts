@@ -7,15 +7,13 @@ export class Project {
     pspNumber: string;
     applicationArea: string;
     submissionType: string;
-    customerInfo: Customer;
-    submiter: User;
-}
-
-export interface Customer {
     fantasyName: string;
     socialReason: string;
     cnpj: string;
+    submiter: User;
+    pdf: Document;
 }
+
 export interface Psp {
     description: string;
     number: number;

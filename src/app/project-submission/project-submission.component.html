@@ -8,19 +8,19 @@
     <br>
     <mat-form-field appearance="outline" required>
       <mat-label>Nome do Projeto</mat-label>
-      <input type="text" required matInput> 
-      <!-- <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>   -->
+      <input type="text" required matInput [(ngModel)]="submission.title" name="project-name"> 
+      <!-- <mat-error *ngIf="project-name.invalid">{{getErrorMessageCpf()}}</mat-error>   -->
      </mat-form-field>
      <br>
      <mat-form-field appearance="outline" required>
       <mat-label>Resumo do Projeto</mat-label>
-      <textarea class="textarea" name="" id="" cols="50" rows="7" placeholder="Faça um resumo do projeto neste campo" matInput required></textarea>
+      <textarea class="textarea" [(ngModel)]="submission.resume" name="resume" id="resumo" cols="50" rows="7" placeholder="Faça um resumo do projeto neste campo" matInput required></textarea>
       <!-- <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>   -->
      </mat-form-field>
      <br>
      <mat-form-field appearance="outline" required>
       <mat-label>Problemática</mat-label>
-      <textarea class="textarea" name="" id="" cols="50" rows="7" placeholder="Problemática do Projeto" matInput required></textarea>
+      <textarea class="textarea" [(ngModel)]="submission.problem" name="problem" id="projproblem" cols="50" rows="7" placeholder="Problemática do Projeto" matInput required></textarea>
      </mat-form-field>
      <br>
      <mat-form-field appearance="outline" required>
@@ -51,19 +51,19 @@
   <div *ngIf="submission.submissionType=='pJur'">
   <mat-form-field appearance="outline" required>
     <mat-label>Nome Fantasia</mat-label>
-    <input type="text" required matInput> 
+    <input type="text" required matInput [(ngModel)]="submission.fantasyName" name="fantasy-name"> 
     <!-- <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>   -->
    </mat-form-field>
    <br>
   <mat-form-field appearance="outline" required>
     <mat-label>Razão Social</mat-label>
-    <input type="text" required matInput> 
+    <input type="text" required matInput [(ngModel)]="submission.socialReason" name="social-reason"> 
     <!-- <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>   -->
    </mat-form-field>
    <br>
    <mat-form-field appearance="outline" required>
     <mat-label>CNPJ</mat-label>
-    <input type="text" [textMask]="{mask: cnpjmask}" required matInput> 
+    <input type="text" [textMask]="{mask: cnpjmask}" required matInput [(ngModel)]="submission.cnpj" name="cnpj"> 
     <!-- <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>   -->
     <mat-icon matSuffix>account_box</mat-icon>
    </mat-form-field>
@@ -72,10 +72,10 @@
 
      
      
-    <label for="docInput">Arquivo Anexo</label>
+    <!-- <label for="docInput">Arquivo Anexo</label>
     <br>
-     <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx,.ppt,pptx,.pptm" id="docInput">
-    <br>  
+     <input type="file" [(ngModel)]="submission.pdf" name="document" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx,.ppt,pptx,.pptm" id="docInput">
+    <br>   -->
     <br>  
 
      <button mat-raised-button	color="primary" type="submit"  [disabled] = "">ENVIAR PROJETO</button>

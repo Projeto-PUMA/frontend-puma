@@ -13,7 +13,7 @@ import { Project, pspOptions, Psp, pspSubOptions } from '../models/project.model
 })
 export class ProjectSubmissionComponent implements OnInit {
 
-  public cnpjmask = [/([0-9]{2})/, '.', /(\d{3})/, /(\d{3})/, '/', /(\d{4})/, '-', /(\d{2})/];
+  public cnpjmask = [/\d/, /\d/,'.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, '-' , /\d/, /\d/];
 
   submission: Project = new Project();
   pspNumbers: Psp[] = pspOptions;
