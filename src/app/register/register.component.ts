@@ -9,7 +9,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {FormControl, Validators} from '@angular/forms';
 import { INVALID } from '@angular/forms/src/model';
 import { NavbarService } from '../navbar/navbar.service';
-
 @Injectable()
 @Component({
   selector: 'app-register',

@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http';
 @Component({
   selector: 'ngbd-carousel-config',
   templateUrl: './carousel-slider.component.html',
-  styleUrls: ['./carousel-slider.component.css'], 
+  styleUrls: ['./carousel-slider.component.css'],
   providers: [NgbCarouselConfig]  // add NgbCarouselConfig to the component providers
 })
 export class NgbdCarouselConfig implements OnInit {

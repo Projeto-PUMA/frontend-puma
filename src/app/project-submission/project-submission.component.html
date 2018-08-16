@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<app-navbar></app-navbar>
+<form>
+<div class="auth-container form-container">
+  <mat-card class="mat-card">
+    <mat-card-title>SUBMETER PROJETO</mat-card-title>
+    <br>
+    <mat-form-field appearance="outline" required>
+      <mat-label>Nome do Projeto</mat-label>
+      <input type="text" required matInput> 
+      <!-- <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>   -->
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="outline" required>
+      <mat-label>Resumo do Projeto</mat-label>
+      <textarea class="textarea" name="" id="" cols="50" rows="7" placeholder="Faça um resumo do projeto neste campo" matInput required></textarea>
+      <!-- <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>   -->
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="outline" required>
+      <mat-label>Problemática</mat-label>
+      <textarea class="textarea" name="" id="" cols="50" rows="7" placeholder="Problemática do Projeto" matInput required></textarea>
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="outline" required>
+      <mat-label>Área de Aplicação</mat-label>
+      <mat-select [(ngModel)]="submission.pspNumber" name="psp" required>
+        <mat-option *ngFor="let options of pspNumbers" [value]="options.number">{{ options.description }}</mat-option>
+      </mat-select>
+
+    </mat-form-field>
+    <br>
+    <div *ngIf="submission.pspNumber !=  '7'">
+    <mat-form-field appearance="outline" required  >
+      <mat-label>Sub-Área de Aplicação</mat-label>
+      <mat-select [(ngModel)]="submission.applicationArea" name="area" required >
+        <mat-option  *ngFor="let suboptions of pspSubOption[submission.pspNumber]"[value]="suboptions">{{suboptions}}</mat-option>
+      </mat-select>
+      <!-- <mat-error *ngIf="degree.invalid">{{getErrorMessageDegree()}}</mat-error> -->
+    </mat-form-field>
+  </div>
+  <br>
+  <mat-radio-group appearance="outline" required [(ngModel)]="submission.submissionType" name="personType">
+    <mat-radio-button value="pFis" matInput>Pessoa Física</mat-radio-button>
+    <mat-radio-button value="pJur" matInput>Pessoa Jurídica</mat-radio-button>
+  </mat-radio-group>
+  <!-- <mat-error *ngIf="degree.invalid">{{getErrorMessageDegree()}}</mat-error> -->
+  <br>
+  <br>
+  <div *ngIf="submission.submissionType=='pJur'">
+  <mat-form-field appearance="outline" required>
+    <mat-label>Nome Fantasia</mat-label>
+    <input type="text" required matInput> 
+    <!-- <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>   -->
+   </mat-form-field>
+   <br>
+  <mat-form-field appearance="outline" required>
+    <mat-label>Razão Social</mat-label>
+    <input type="text" required matInput> 
+    <!-- <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>   -->
+   </mat-form-field>
+   <br>
+   <mat-form-field appearance="outline" required>
+    <mat-label>CNPJ</mat-label>
+    <input type="text" [textMask]="{mask: cnpjmask}" required matInput> 
+    <!-- <mat-error *ngIf="cpf.invalid">{{getErrorMessageCpf()}}</mat-error>   -->
+    <mat-icon matSuffix>account_box</mat-icon>
+   </mat-form-field>
+   <br>
+  </div>
+
+     
+     
+    <label for="docInput">Arquivo Anexo</label>
+    <br>
+     <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx,.ppt,pptx,.pptm" id="docInput">
+    <br>  
+    <br>  
+
+     <button mat-raised-button	color="primary" type="submit"  [disabled] = "">ENVIAR PROJETO</button>
+
+  </mat-card>  
+</div>
+</form>
+</html>

@@ -10,11 +10,11 @@ export class User {
   fullAddress: string;
   name: string;
   password: string;
+  passwordConfirm: string;
   phoneAlternative: string;
   phonePrincipal: string;
   profession: string;
   username: string;
-  passwordConfirm: string;
 }
 
 export const DegreeOptions: Degree[] = [
