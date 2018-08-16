@@ -83,7 +83,7 @@ export class RegisterComponent implements OnInit {
   }
 
   getErrorMessageProfession() {
-    this.errorMessageProfession = 'Senha deve ter no mínimo 6 carácteres';
+    this.errorMessageProfession = 'Campo Obrigatório';
     if(this.profession.hasError('required')){
       return this.errorMessageProfession;
     }

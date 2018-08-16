@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
 import { HttpModule } from '@angular/http';
 import { RegisterService } from './register/register.service';
-import { MatSelectModule, MatOptionModule, MatIconModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatListModule } from '@angular/material';
+import { MatSelectModule, MatOptionModule, MatIconModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatListModule, MatRadioModule } from '@angular/material';
 import { TextMaskModule } from 'angular2-text-mask';
 import { NgbdCarouselConfig } from './landing/carousel-slider/carousel-slider.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -54,6 +54,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
+    MatRadioModule,
   ],
   providers: [RegisterService, AuthenticationService, NavbarService, DashboardService],
   bootstrap: [AppComponent]
