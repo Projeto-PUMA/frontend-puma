@@ -10,8 +10,8 @@
       <img src="/assets/imgs/logo.png" alt="logo" height="80" width="110"> 
       </a>
       <span class="spacer"></span>
-      <div *ngIf="nav.loginVisible" >
-         <a class="router" routerLinkActive="active" routerLink="/login">
+      <div *ngIf="nav.logoutVisible" >
+         <a class="router" routerLinkActive="active" (click)="logout()">
             <button mat-button>
                <span>SAIR</span>
                <mat-icon>person</mat-icon>

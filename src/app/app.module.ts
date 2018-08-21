@@ -25,6 +25,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarDashboardComponent } from './dashboard/navbar-dashboard/navbar-dashboard.component'; 
 import { NavbarDashboardService } from './dashboard/navbar-dashboard/navbar-dashboard.service';
 import { SidebarDashboardComponent } from './dashboard/sidebar-dashboard/sidebar-dashboard.component'
+import { AuthGuardService } from './auth-guard.service';
+import { RoleGuardService } from './role-guard.service';
+import { ManagementComponent } from './dashboard/management/management.component'
+import { PostManagementComponent } from './dashboard/management/post-management/post-management.component';
+import { PostSubmissionComponent } from './dashboard/management/post-submission/post-submission.component';
+import { SidebarDashboardService } from './dashboard/sidebar-dashboard/sidebar-dashboard.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +44,9 @@ import { SidebarDashboardComponent } from './dashboard/sidebar-dashboard/sidebar
     DashboardComponent,
     NavbarDashboardComponent,
     SidebarDashboardComponent,
+    ManagementComponent,
+    PostManagementComponent,
+    PostSubmissionComponent
   ],
   imports: [
     BrowserModule,
@@ -56,9 +66,10 @@ import { SidebarDashboardComponent } from './dashboard/sidebar-dashboard/sidebar
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
-    MatRadioModule,
+    MatRadioModule
   ],
-  providers: [RegisterService, AuthenticationService, NavbarService, NavbarDashboardService],
+  providers: [RegisterService, AuthenticationService, NavbarService, NavbarDashboardService, SidebarDashboardService, AuthGuardService, RoleGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

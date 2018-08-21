@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { NavbarDashboardService } from './navbar-dashboard/navbar-dashboard.service';
+import { SidebarDashboardService } from './sidebar-dashboard/sidebar-dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,17 +8,12 @@ import { NavbarDashboardService } from './navbar-dashboard/navbar-dashboard.serv
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-
-  // isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-  //   .pipe(
-  //     map(result => result.matches)
-  //   );
-  // private breakpointObserver: BreakpointObserver
-
+  // public side: SidebarDashboardService, public nav: NavbarDashboardService,
   constructor(public nav: NavbarDashboardService) { }
 
   ngOnInit() {
-    this.nav.show();
-    this.nav.showLogout();
+    // this.side.show();
+     this.nav.show();
+    // this.nav.showLogout();
   }
 }

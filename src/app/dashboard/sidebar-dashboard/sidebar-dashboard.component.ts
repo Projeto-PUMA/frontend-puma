@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarDashboardService } from './sidebar-dashboard.service';
 
 @Component({
   selector: 'app-sidebar-dashboard',
@@ -7,9 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(public side: SidebarDashboardService) {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit(){}
 }

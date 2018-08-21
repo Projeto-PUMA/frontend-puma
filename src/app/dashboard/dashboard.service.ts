@@ -10,5 +10,5 @@
 
 //   constructor(private http:HttpClient) {}
 
-// 	private userUrl = '/dashboard';
+// 	private userUrl = '/auth/dashboard';
 // }

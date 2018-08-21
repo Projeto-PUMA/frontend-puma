@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import { Observable} from 'rxjs';
 import { map, filter, catchError, mergeMap } from 'rxjs/operators';
-
+import * as jwt_decode from "jwt-decode";
+ 
  
 @Injectable()
 export class AuthenticationService {
@@ -20,7 +21,8 @@ export class AuthenticationService {
                 if (token) {
                     // store username and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify({ username: username, token: token }));
- 
+                    // let tokenInfo = this.getDecodedAccessToken(token); // decode token
+                    // localStorage.setItem('authorities', JSON.stringify(tokenInfo.authorities));
                     // return true to indicate successful login
                     return true;
                 } else {
@@ -32,14 +34,43 @@ export class AuthenticationService {
         );
     }
  
-    getToken(): String {
+    getToken(token): string{
       var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-      var token = currentUser && currentUser.token;
-      return token ? token : "";
+      var token = currentUser && currentUser.getDecodedAccessToken;
+      return token ? token : null;
     }
  
-    logout(): void {
-        // clear token remove user from local storage to log user out
-        localStorage.removeItem('currentUser');
+    logout(): any {
+        try{
+            if(localStorage.getItem('currentUser')){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        catch(Error){
+            return false;
+        }
     }
+
+    getDecodedAccessToken(token: string): any {
+        try {
+            return jwt_decode(token);
+        }
+        catch(Error){
+            return null;
+        }
+      }
+    
+      isAuthenticated() {
+        // get the auth token from localStorage
+        let token = localStorage.getItem('currentUser');
+        // check if token is set, then...
+        if (token) {
+            return true;
+        }
+        return false;
+    }
+
 }
