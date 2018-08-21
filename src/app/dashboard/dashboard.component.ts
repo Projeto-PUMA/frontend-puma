@@ -8,12 +8,11 @@ import { SidebarDashboardService } from './sidebar-dashboard/sidebar-dashboard.s
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  // public side: SidebarDashboardService, public nav: NavbarDashboardService,
-  constructor(public nav: NavbarDashboardService) { }
+  constructor(public nav: NavbarDashboardService, public side: SidebarDashboardService) { }
 
   ngOnInit() {
-    // this.side.show();
+    this.side.show();
      this.nav.show();
-    // this.nav.showLogout();
+    this.nav.showLogout();
   }
 }
