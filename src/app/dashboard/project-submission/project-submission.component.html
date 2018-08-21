@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<app-navbar></app-navbar>
 <form>
 <div class="auth-container form-container">
   <mat-card class="mat-card">
-    <mat-card-title>SUBMETER PROJETO</mat-card-title>
+    <mat-card-title class="mat-card-title">SUBMETER PROJETO</mat-card-title>
     <br>
     <mat-form-field appearance="outline" required>
       <mat-label>Nome do Projeto</mat-label>
@@ -42,10 +41,13 @@
     </mat-form-field>
   </div>
   <br>
-  <mat-radio-group appearance="outline" required [(ngModel)]="submission.submissionType" name="personType">
+
+  <div class="block">
+  <mat-radio-group  required [(ngModel)]="submission.submissionType" name="personType">
     <mat-radio-button value="pFis" matInput>Pessoa Física</mat-radio-button>
     <mat-radio-button value="pJur" matInput>Pessoa Jurídica</mat-radio-button>
   </mat-radio-group>
+</div>
   <mat-error *ngIf="personType.invalid">{{getErrorMessagePersonType()}}</mat-error>
   <br>
   <br>
@@ -73,11 +75,11 @@
 
      
      
-    <label for="docInput">Arquivo Anexo</label>
+    <!-- <label for="docInput">Arquivo Anexo</label>
     <br>
      <input type="file" [(ngModel)]="submission.pdf" name="document" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx,.ppt,pptx,.pptm" id="docInput">
     <br>  
-    <br>  
+    <br>   -->
 
      <button mat-raised-button	color="primary" type="submit"  [disabled] = "">ENVIAR PROJETO</button>
 

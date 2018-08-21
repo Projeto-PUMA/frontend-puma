@@ -10,18 +10,10 @@
       <img src="/assets/imgs/logo.png" alt="logo" height="80" width="110"> 
       </a>
       <span class="spacer"></span>
-      <div *ngIf="nav.registerVisible">
-         <a class="router" routerLinkActive="active" routerLink="/register">
-            <button mat-button>
-               <span>REGISTRE-SE </span>
-               <mat-icon>person_add</mat-icon>
-            </button>
-         </a>
-      </div>
       <div *ngIf="nav.loginVisible" >
          <a class="router" routerLinkActive="active" routerLink="/login">
             <button mat-button>
-               <span>ENTRAR</span>
+               <span>SAIR</span>
                <mat-icon>person</mat-icon>
             </button>
          </a>

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import {RequestOptions, Headers, Http } from '@angular/http';
 import { Router } from '@angular/router';
-import { AuthenticationService } from '../authentication.service';
-import { NavbarService } from '../navbar/navbar.service';
+import { AuthenticationService } from 'src/app/authentication.service';
+import { NavbarService } from 'src/app/navbar/navbar.service';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Project, pspOptions, Psp, pspSubOptions } from '../models/project.model';
+import { Project, pspOptions, Psp, pspSubOptions } from 'src/app/models/project.model';
 @Component({
   selector: 'app-project-submission',
   templateUrl: './project-submission.component.html',
