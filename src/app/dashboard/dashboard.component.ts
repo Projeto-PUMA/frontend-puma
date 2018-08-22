@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, QueryList, ViewChildren } from '@angular/core';
 import { NavbarDashboardService } from './navbar-dashboard/navbar-dashboard.service';
 import { SidebarDashboardService } from './sidebar-dashboard/sidebar-dashboard.service';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,10 +10,11 @@ import { SidebarDashboardService } from './sidebar-dashboard/sidebar-dashboard.s
 })
 export class DashboardComponent {
   constructor(public nav: NavbarDashboardService, public side: SidebarDashboardService) { }
-
+  
   ngOnInit() {
     this.side.show();
-     this.nav.show();
+    this.side.canShowItem();
+    this.nav.show();
     this.nav.showLogout();
   }
 }

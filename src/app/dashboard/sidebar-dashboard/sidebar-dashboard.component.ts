@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
 import { SidebarDashboardService } from './sidebar-dashboard.service';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-sidebar-dashboard',
@@ -8,7 +9,12 @@ import { SidebarDashboardService } from './sidebar-dashboard.service';
 })
 export class SidebarDashboardComponent implements OnInit {
 
-  constructor(public side: SidebarDashboardService) {}
+  constructor(public side: SidebarDashboardService) {
+  }
 
-  ngOnInit(){}
+  @ViewChildren('start') sc: QueryList<MatSidenav>;
+
+
+  ngOnInit(){
+  }
 }

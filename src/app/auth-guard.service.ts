@@ -11,13 +11,10 @@ export class AuthGuardService implements CanActivate {
         // Check to see if a user has a valid token
         if (this.authService.isAuthenticated()) {
             // If they do, return true and allow the user to load app
-            console.log('passou aki');
             return true;
         }
         // If not, they redirect them to the login page
         this.router.navigate(['/login']);
         return false;
     }
-
-
 }

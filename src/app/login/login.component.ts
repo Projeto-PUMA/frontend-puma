@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
         this.nav.show();
         this.nav.hideLogin();
         this.nav.showRegister();
+        localStorage.removeItem('authorities');
     }
  
     login() {

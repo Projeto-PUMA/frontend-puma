@@ -66,7 +66,8 @@ import { SidebarDashboardService } from './dashboard/sidebar-dashboard/sidebar-d
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSidenavModule
   ],
   providers: [RegisterService, AuthenticationService, NavbarService, NavbarDashboardService, SidebarDashboardService, AuthGuardService, RoleGuardService],
   bootstrap: [AppComponent]

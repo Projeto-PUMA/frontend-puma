@@ -17,7 +17,7 @@ export class NavbarDashboardComponent implements OnInit {
   }
 
   logout(){
-    if (this.authenticationService.logout() === true) {
+    if (this.authenticationService.logout()) {
       this.router.navigate(['/']);
   } else {
       console.log("erro")

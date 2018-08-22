@@ -17,4 +17,5 @@ export class NavbarDashboardService {
   hideLogout() { this.logoutVisible = false; }
 
   showLogout() { this.logoutVisible = true; }
+
 }

@@ -21,8 +21,10 @@ export class AuthenticationService {
                 if (token) {
                     // store username and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify({ username: username, token: token }));
-                    // let tokenInfo = this.getDecodedAccessToken(token); // decode token
-                    // localStorage.setItem('authorities', JSON.stringify(tokenInfo.authorities));
+                    let tokenInfo = this.getDecodedAccessToken(token); // decode token
+                    // console.log(tokenInfo);
+                    localStorage.removeItem('authorities');
+                    localStorage.setItem('authorities', JSON.stringify(tokenInfo.authorities));
                     // return true to indicate successful login
                     return true;
                 } else {
@@ -36,13 +38,15 @@ export class AuthenticationService {
  
     getToken(token): string{
       var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-      var token = currentUser && currentUser.getDecodedAccessToken;
+      var token = currentUser && currentUser.token;
       return token ? token : null;
     }
  
     logout(): any {
         try{
             if(localStorage.getItem('currentUser')){
+                localStorage.removeItem('authorities');
+                localStorage.removeItem('currentUser');
                 return true;
             }
             else {
