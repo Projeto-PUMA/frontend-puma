@@ -31,6 +31,7 @@ import { ManagementComponent } from './dashboard/management/management.component
 import { PostManagementComponent } from './dashboard/management/post-management/post-management.component';
 import { PostSubmissionComponent } from './dashboard/management/post-submission/post-submission.component';
 import { SidebarDashboardService } from './dashboard/sidebar-dashboard/sidebar-dashboard.service';
+import { PostSubmissionService } from './dashboard/management/post-submission/post-submission.service';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,15 @@ import { SidebarDashboardService } from './dashboard/sidebar-dashboard/sidebar-d
     MatRadioModule,
     MatSidenavModule
   ],
-  providers: [RegisterService, AuthenticationService, NavbarService, NavbarDashboardService, SidebarDashboardService, AuthGuardService, RoleGuardService],
+  providers: [
+    RegisterService, 
+    AuthenticationService, 
+    NavbarService, 
+    NavbarDashboardService, 
+    SidebarDashboardService, 
+    AuthGuardService, 
+    RoleGuardService,
+    PostSubmissionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

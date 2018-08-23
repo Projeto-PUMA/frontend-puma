@@ -20,11 +20,12 @@ export class AuthenticationService {
                 let token = response.json() && response.json().token;
                 if (token) {
                     // store username and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('currentUser', JSON.stringify({ username: username, token: token }));
+                    localStorage.setItem('currentUser', JSON.stringify({token: token }));
                     let tokenInfo = this.getDecodedAccessToken(token); // decode token
-                    // console.log(tokenInfo);
+                    console.log(tokenInfo);
                     localStorage.removeItem('authorities');
                     localStorage.setItem('authorities', JSON.stringify(tokenInfo.authorities));
+                    console.log(this.getToken());
                     // return true to indicate successful login
                     return true;
                 } else {
@@ -36,11 +37,18 @@ export class AuthenticationService {
         );
     }
  
-    getToken(token): string{
+    getToken(): String{
       var currentUser = JSON.parse(localStorage.getItem('currentUser'));
       var token = currentUser && currentUser.token;
       return token ? token : null;
     }
+
+    getTokenToHeaders(): string {
+        var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        var token = currentUser.token;
+        return token ? token : "";
+      }
+  
  
     logout(): any {
         try{
@@ -75,6 +83,17 @@ export class AuthenticationService {
             return true;
         }
         return false;
+    }
+
+    getUserId(): number{
+        try{
+            let token = this.getToken();
+            let tokenInfo = jwt_decode(token);
+            return tokenInfo.id;
+        }
+        catch(Error){
+            return null;
+        }
     }
 
 }

@@ -5,8 +5,8 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 
-import decode from 'jwt-decode';
 import { AuthenticationService } from './authentication.service';
+import * as jwt_decode from "jwt-decode";
 
 @Injectable()
 export class RoleGuardService implements CanActivate {
@@ -15,12 +15,15 @@ export class RoleGuardService implements CanActivate {
     // this will be passed from the route config
     // on the data property
     const expectedRole = route.data.expectedRole;
-    const token = localStorage.getItem('currentUser');
+    let token = localStorage.getItem('currentUser');
     // decode the token to get its payload
-    const tokenPayload = decode(token);
+    const tokenPayload = this.auth.getDecodedAccessToken(token);
+    const tokenRoles = JSON.stringify(tokenPayload.authorities);
+    console.log("passou aki");
+    console.log(tokenRoles);
     if (
       !this.auth.isAuthenticated() || 
-      tokenPayload.role !== expectedRole
+      !tokenRoles.includes(expectedRole)
     ) {
       this.router.navigate(['login']);
       return false;

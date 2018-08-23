@@ -11,10 +11,7 @@ export class SidebarDashboardComponent implements OnInit {
 
   constructor(public side: SidebarDashboardService) {
   }
-
-  @ViewChildren('start') sc: QueryList<MatSidenav>;
-
-
+  
   ngOnInit(){
   }
 }

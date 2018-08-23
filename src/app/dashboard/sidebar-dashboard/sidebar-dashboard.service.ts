@@ -12,7 +12,9 @@ export class SidebarDashboardService {
   show() { this.visible = true; }
 
   canShowItem(){
-    if (localStorage.getItem('authorities').includes('ROLE_ADMIN')){
+  let check =  localStorage.getItem('authorities');
+    
+    if (check.includes('ROLE_ADMIN')){
       console.log("admin true");
       this.canShow = true;
     }
