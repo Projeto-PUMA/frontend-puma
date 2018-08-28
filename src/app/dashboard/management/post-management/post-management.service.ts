@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, RequestOptions } from "@angular/http";
 import { AuthenticationService } from '../../../authentication.service';
-import { Post, Author } from '../../../models/post.model';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map, filter, catchError, mergeMap } from 'rxjs/operators';
 
 @Injectable()
 export class PostManagementService {
@@ -13,7 +12,7 @@ export class PostManagementService {
         private authenticationService: AuthenticationService) {}
 
 
-    public getPosts(){
+    getPosts(){
         let tokenParse = this.authenticationService.getTokenToHeaders();
 
         const headers =  new Headers({
@@ -21,8 +20,8 @@ export class PostManagementService {
               'Authorization': 'Bearer ' + tokenParse
             })
 
-        return this.http.get(this.postManagementUrl, {headers: headers});
-        //return this.http.post(this.postManagementUrl, post, {headers : headers})
-    }
-
+        return this.http.get(this.postManagementUrl, {headers: headers}).pipe(
+            map(res => res.json())
+        );
+        }
 }
