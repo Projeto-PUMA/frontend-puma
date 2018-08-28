@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/authentication.service';
+import { PostManagementService } from './post-management.service';
 
 @Component({
   selector: 'app-post-management',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostManagementComponent implements OnInit {
 
-  constructor() { }
+  constructor(private postManagementService: PostManagementService, private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
+  }
+
+  getPosts(){
+
+    this.postManagementService.getPosts()
+      .subscribe( () => {
+          alert("Post Criado com Sucesso.");
+        });
   }
 
 }
