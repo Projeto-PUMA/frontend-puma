@@ -12,25 +12,19 @@ export class PostSubmissionService {
         private http: Http,
         private authenticationService: AuthenticationService) {}
 
-    private headers = new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer '.concat(this.authenticationService.getTokenToHeaders())
-        });
-
           
     create(post: Post){
-        let tokenParse = JSON.stringify(this.authenticationService.getTokenToHeaders());
+        let tokenParse = this.authenticationService.getTokenToHeaders();
 
         const headers =  new Headers({
               'Content-Type':  'application/json',
-              'Authorization': 'Bearer ' + (tokenParse)
+              'Authorization': 'Bearer ' + tokenParse
             })
           
-        
         console.log(JSON.stringify(headers));
 
         return this.http
-            .post(this.postSubmissionUrl,post, {headers : headers})
+            .post(this.postSubmissionUrl, post, {headers : headers})
     }
     
 }
