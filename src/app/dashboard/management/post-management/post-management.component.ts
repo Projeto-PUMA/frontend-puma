@@ -9,7 +9,7 @@ import { Post } from '../../../models/post.model';
   styleUrls: ['./post-management.component.css']
 })
 export class PostManagementComponent implements OnInit {
-  private posts: Post[] = [];
+  public posts: Post[] = [];
 
   constructor(private postManagementService: PostManagementService, private authenticationService: AuthenticationService) { }
 
