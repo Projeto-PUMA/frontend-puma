@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class ProjectSubmissionService {
-    private projectSubmissionUrl = 'http://localhost:8080//sec/project/';
+    private projectSubmissionUrl = 'http://localhost:8080/sec/project/new/';
     
     constructor(   
         private http: Http,
