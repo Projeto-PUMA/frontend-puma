@@ -1,0 +1,8 @@
+.mat-sidenav{
+    background-color: white;
+    box-shadow: 5px 5px 2px grey;
+}
+
+.mat-list-item{
+    padding: 5%;
+}

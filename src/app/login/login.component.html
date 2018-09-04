@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<div  class="auth-container">
+  <app-navbar></app-navbar>
+<mat-card class="mat-card">
+  <mat-card-title>LOGIN</mat-card-title>
+  <div class="form-container" style="height: 100%">
+
+    <mat-form-field appearance="outline" required>
+      <mat-label>CPF</mat-label>
+      <input [(ngModel)]="model.username" #username="ngModel" maxlength="30" matInput type="text">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" required>
+      <mat-label>Senha</mat-label>
+      <input [(ngModel)]="model.password" #password="ngModel" maxlength="30" matInput [type]="hide ? 'password' : 'text'" required type="password">
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+    </mat-form-field>
+
+    <button mat-raised-button	color="primary" type="submit" (click)="login()" [disabled]="">CONFIRMAR</button>
+    <div style="height: 100%">
+      <mat-hint> * Campos obrigatorios</mat-hint>
+    </div>
+  </div>
+</mat-card>
+</div>
+</html>

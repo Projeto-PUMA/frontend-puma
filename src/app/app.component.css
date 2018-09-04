@@ -1,0 +1,116 @@
+/* .example-icon {
+  padding: 0 14px;
+}
+
+.spacer {
+  flex:  auto;
+}
+
+.router{
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.sub{
+  color: white;
+  text-decoration: none;
+  font-size: 10px;
+  top: 40px;
+  left: 15px;
+	position: absolute;
+}
+
+.mat-toolbar.mat-primary {
+  background: transparent;
+} */
+
+
+/* 
+#dropdown {
+  border: none;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#dropdown ul {
+  background: #333333;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#dropdown li {
+  float: left;
+  padding: 0px;
+}
+
+#dropdown > ul > li > a {
+  color: #cccccc;
+}
+
+#dropdown ul ul a {
+  color: #cccccc;
+}
+
+#dropdown li > a:hover, #dropdown ul li:hover > a {
+  background: #8B3E2F;
+  text-decoration: none;
+}
+
+#dropdown li ul {
+  background: #333333;
+  display: none;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  position: absolute;
+  width: 240px;
+  z-index: 200;
+}
+
+#dropdown li:hover ul {
+  display: block;
+}
+
+#dropdown li li {
+  background: white;
+  display: block;
+  float: none;
+  margin: 0px;
+  padding: 0px;
+  width: 240px;
+}
+
+#dropdown li:hover li a {
+  background: none;
+}
+
+#dropdown li ul a {
+  display: block;
+  height: 35px;
+  font-size: 12px;
+  font-style: normal;
+  margin: 0px;
+  padding: 0px 10px 0px 15px;
+  text-align: left;
+}
+
+#dropdown li ul a:hover, #dropdown li ul li:hover > a {
+  background: #8B3E2F;
+  color: #ffffff;
+  text-decoration: none;
+} */
+/* 
+.mat-form-field{
+  padding-left: 8% !important; 
+}
+
+.btn{
+    padding-left: 30% !important; 
+} */

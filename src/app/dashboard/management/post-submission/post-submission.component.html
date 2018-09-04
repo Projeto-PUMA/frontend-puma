@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<form>
+<div class="auth-container form-container">
+  <mat-card class="mat-card">
+    <mat-card-title class="mat-card-title">SUBMETER PROJETO</mat-card-title>
+    <br>
+    <mat-form-field appearance="outline" required>
+      <mat-label>Título</mat-label>
+      <textarea [(ngModel)]="post.title" class="textarea" name="resume" id="title" cols="50" rows="1" placeholder="Título" matInput required></textarea>
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="outline" required>
+      <mat-label>Notícia</mat-label>
+      <textarea [(ngModel)]="post.body" class="textarea" name="resume" id="body" cols="50" rows="20" placeholder="Notícia" matInput required></textarea>
+     </mat-form-field>
+     <br>
+  <button mat-raised-button	color="primary" type="submit" (click)="createPost()"  [disabled] = "">PUBLICAR NOTICIA</button>
+  </mat-card>  
+</div>
+</form>
+</html>

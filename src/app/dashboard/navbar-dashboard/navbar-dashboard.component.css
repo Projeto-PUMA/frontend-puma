@@ -1,0 +1,37 @@
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .spacer {
+    flex:  auto;
+  }
+  
+  .router{
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .sub{
+    text-decoration: none;
+    font-size: 10px;
+    top: 40px;
+    left: 15px;
+      position: absolute;
+  }
+
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%  !important;
+} 
+.inner-sidenav-content {
+    overflow: auto;
+    position: top;
+    bottom:0;
+    left:0;
+    right:0;
+    margin: 10px;
+}

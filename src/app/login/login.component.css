@@ -1,0 +1,26 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+.form-container > * {
+    width: 100%;
+}
+
+.mat-card{
+        width:400px;
+}
+  
+.mat-hint{
+    font-size:10px;
+}
+
+.mat-error{
+    font-size:10px;
+}
+
+.auth-container{
+    background-image: url("https://i.imgur.com/2D8YE2i.png");
+    height: 100vh;
+    width: 100vw;
+}
