@@ -7,7 +7,7 @@ import * as jwt_decode from "jwt-decode";
  
 @Injectable()
 export class AuthenticationService {
-    private authUrl = 'https://backend-puma-dev.herokuapp.com/auth';
+    private authUrl = 'https://puma-backend.herokuapp.com/auth';
     private headers = new Headers({'Content-Type': 'application/json'});
  
     constructor(private http: Http) {

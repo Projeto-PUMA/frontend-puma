@@ -22,7 +22,7 @@ import { LandingComponent } from './landing/landing.component';
 import { NavbarService } from './navbar/navbar.service';
 // import { DashboardService } from './dashboard/dashboard.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { NavbarDashboardComponent } from './dashboard/navbar-dashboard/navbar-dashboard.component'; 
+import { NavbarDashboardComponent } from './dashboard/navbar-dashboard/navbar-dashboard.component';
 import { NavbarDashboardService } from './dashboard/navbar-dashboard/navbar-dashboard.service';
 import { SidebarDashboardComponent } from './dashboard/sidebar-dashboard/sidebar-dashboard.component'
 import { AuthGuardService } from './auth-guard.service';
@@ -32,6 +32,7 @@ import { PostManagementComponent } from './dashboard/management/post-management/
 import { PostSubmissionComponent } from './dashboard/management/post-submission/post-submission.component';
 import { SidebarDashboardService } from './dashboard/sidebar-dashboard/sidebar-dashboard.service';
 import { PostSubmissionService } from './dashboard/management/post-submission/post-submission.service';
+import { PostManagementService } from './dashboard/management/post-management/post-management.service';
 
 @NgModule({
   declarations: [
@@ -71,14 +72,15 @@ import { PostSubmissionService } from './dashboard/management/post-submission/po
     MatSidenavModule
   ],
   providers: [
-    RegisterService, 
-    AuthenticationService, 
-    NavbarService, 
-    NavbarDashboardService, 
-    SidebarDashboardService, 
-    AuthGuardService, 
+    RegisterService,
+    AuthenticationService,
+    NavbarService,
+    NavbarDashboardService,
+    SidebarDashboardService,
+    AuthGuardService,
     RoleGuardService,
-    PostSubmissionService],
+    PostSubmissionService,
+    PostManagementService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

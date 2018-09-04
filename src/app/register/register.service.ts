@@ -13,7 +13,7 @@ export class RegisterService {
 
   constructor(private http:HttpClient) {}
 
-  private userUrl = '/register';
+  private userUrl = 'http://localhost:8080/register';
 
   public createUser(user) {
     return this.http.post<User>(this.userUrl, user);

@@ -9,14 +9,18 @@ import {ProjectSubmissionComponent} from './dashboard/project-submission/project
 import { AuthGuardService } from './auth-guard.service';
 import { RoleGuardService } from './role-guard.service';
 import { PostSubmissionComponent } from './dashboard/management/post-submission/post-submission.component';
+import { PostManagementComponent } from './dashboard/management/post-management/post-management.component';
 const routes: Routes = [
-  { 
-    path: '', 
+  {
+    path: 'home',
     component: LandingComponent
   },
   {
-     path: 'register', 
-     component: RegisterComponent 
+    path: '',redirectTo: 'home', pathMatch: 'full'
+  },
+  {
+     path: 'register',
+     component: RegisterComponent
   },
   {
     path: 'login',
@@ -24,16 +28,24 @@ const routes: Routes = [
   },
   {
     path: 'auth/dashboard',
-    canActivate: [AuthGuardService], 
-    component: DashboardComponent, 
+    canActivate: [AuthGuardService],
+    component: DashboardComponent,
     children:[
       {
-        path:'projectSubmission', 
+        path:'projectSubmission',
         component: ProjectSubmissionComponent
       },
       {
         path:'management/submitPost',
         component: PostSubmissionComponent,
+        canActivate: [RoleGuardService],
+        data: {
+          expectedRole: 'ROLE_ADMIN'
+        }
+      },
+      {
+        path:'postManagement',
+        component: PostManagementComponent,
         canActivate: [RoleGuardService],
         data: {
           expectedRole: 'ROLE_ADMIN'

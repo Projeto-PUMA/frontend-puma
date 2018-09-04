@@ -12,6 +12,7 @@ export class Project {
     cnpj: string;
     submiter: User;
     pdf: Document;
+    author: Author;
 }
 
 export interface Psp {
@@ -80,3 +81,6 @@ export const pspSubOptions: Array<Object> = [
     psp6SubOptions,
     psp7SubOptions,
 ];
+export class Author{
+    id: number;
+}

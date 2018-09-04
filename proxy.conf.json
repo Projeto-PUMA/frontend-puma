@@ -1,6 +1,6 @@
 {
   "/": {
-    "target": "https://backend-puma-dev.herokuapp.com",
+    "target": "https://puma-backend.herokuapp.com",
     "secure": false
   }
 }
