@@ -1,5 +1,8 @@
-.app-sidebar-dashboard{
+.mat-sidenav{
     background-color: white;
     box-shadow: 5px 5px 2px grey;
-    padding:30px;
+}
+
+.mat-list-item{
+    padding: 5%;
 }

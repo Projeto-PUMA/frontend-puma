@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
         this.nav.show();
         this.nav.hideLogin();
         this.nav.showRegister();
+        localStorage.removeItem('authorities');
     }
  
     login() {
@@ -35,7 +36,7 @@ export class LoginComponent implements OnInit {
             .subscribe(result => {
                 if (result === true) {
                     // login successful
-                    this.router.navigate(['/dashboard']);
+                    this.router.navigate(['/auth/dashboard']);
                 } else {
                     // login failed
                     this.error = 'CPF ou Senha Incorreta';

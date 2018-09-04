@@ -14,15 +14,24 @@ import { MatSelectModule, MatOptionModule, MatIconModule, MatToolbarModule, MatB
 import { TextMaskModule } from 'angular2-text-mask';
 import { NgbdCarouselConfig } from './landing/carousel-slider/carousel-slider.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { ProjectSubmissionComponent } from './project-submission/project-submission.component';
+import { ProjectSubmissionComponent } from './dashboard/project-submission/project-submission.component';
 import {LoginComponent} from './login/login.component'
 import { AuthenticationService } from './authentication.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LandingComponent } from './landing/landing.component';
 import { NavbarService } from './navbar/navbar.service';
-import { AdminComponent } from './dashboard/admin/admin.component';
-import { DashboardService } from './dashboard/dashboard.service';
-import { DashboardComponent } from './dashboard/dashboard.component'; 
+// import { DashboardService } from './dashboard/dashboard.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NavbarDashboardComponent } from './dashboard/navbar-dashboard/navbar-dashboard.component'; 
+import { NavbarDashboardService } from './dashboard/navbar-dashboard/navbar-dashboard.service';
+import { SidebarDashboardComponent } from './dashboard/sidebar-dashboard/sidebar-dashboard.component'
+import { AuthGuardService } from './auth-guard.service';
+import { RoleGuardService } from './role-guard.service';
+import { ManagementComponent } from './dashboard/management/management.component'
+import { PostManagementComponent } from './dashboard/management/post-management/post-management.component';
+import { PostSubmissionComponent } from './dashboard/management/post-submission/post-submission.component';
+import { SidebarDashboardService } from './dashboard/sidebar-dashboard/sidebar-dashboard.service';
+import { PostSubmissionService } from './dashboard/management/post-submission/post-submission.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +43,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NavbarComponent,
     LandingComponent,
     DashboardComponent,
-    AdminComponent,
+    NavbarDashboardComponent,
+    SidebarDashboardComponent,
+    ManagementComponent,
+    PostManagementComponent,
+    PostSubmissionComponent
   ],
   imports: [
     BrowserModule,
@@ -55,8 +68,18 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatSidenavModule,
     MatListModule,
     MatRadioModule,
+    MatSidenavModule
   ],
-  providers: [RegisterService, AuthenticationService, NavbarService, DashboardService],
+  providers: [
+    RegisterService, 
+    AuthenticationService, 
+    NavbarService, 
+    NavbarDashboardService, 
+    SidebarDashboardService, 
+    AuthGuardService, 
+    RoleGuardService,
+    PostSubmissionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

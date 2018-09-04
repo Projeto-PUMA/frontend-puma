@@ -13,18 +13,12 @@
   }
   
   .sub{
-    color: white;
     text-decoration: none;
     font-size: 10px;
     top: 40px;
     left: 15px;
       position: absolute;
   }
-  
-  .mat-toolbar.mat-primary {
-    background: transparent;
-  }
-  
 
   .fixed-header {
     position: fixed;
