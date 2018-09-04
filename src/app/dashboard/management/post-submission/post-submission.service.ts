@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class PostSubmissionService {
-    private postSubmissionUrl = 'http://localhost:8080/sec/post/new';
+    private postSubmissionUrl = 'https://backend-puma-dev.herokuapp.com/sec/post/new';
     
     constructor(    
         private http: Http,
