@@ -26,18 +26,18 @@ export class ProjectSubmissionComponent implements OnInit {
   iterationPsp = [0, 1, 2, 3, 4, 5, 6];
   
   title = new FormControl('', [Validators.required]); //
-  resume = new FormControl('', [Validators.required]); //
-  problem = new FormControl('', [Validators.required]); //
+  summary = new FormControl('', [Validators.required]); //
+  body = new FormControl('', [Validators.required]); //
   personType = new FormControl('', [Validators.required]); //
   cnpj = new FormControl('', [Validators.required]); //
-  applicationArea = new FormControl('', [Validators.required]); //
+  projectSubArea = new FormControl('', [Validators.required]); //
   subArea = new FormControl('', [Validators.required]); //
   socialReason = new FormControl('', [Validators.required]); //
   fantasyName = new FormControl('', [Validators.required]); //
 
   errorMessageTitle: string;
-  errorMessageResume: string;
-  errorMessageProblem: string;
+  errorMessageSummary: string;
+  errorMessageBody: string;
   errorMessagePersonType: string;
   errorMessageCNPJ: string;
   errorMessageApplicationArea: string;
@@ -83,16 +83,16 @@ getErrorMessageTitle() {
     return this.errorMessageTitle;
   }
 }
-getErrorMessageResume() {
-  this.errorMessageResume = 'Campo Obrigatório';
-  if(this.resume.hasError('required')){
-    return this.errorMessageResume;
+getErrorMessageSummary() {
+  this.errorMessageSummary = 'Campo Obrigatório';
+  if(this.summary.hasError('required')){
+    return this.errorMessageSummary;
   }
 }
-getErrorMessageProblem() {
-  this.errorMessageProblem = 'Campo Obrigatório';
-  if(this.problem.hasError('required')){
-    return this.errorMessageProblem;
+getErrorMessageBody() {
+  this.errorMessageBody = 'Campo Obrigatório';
+  if(this.body.hasError('required')){
+    return this.errorMessageBody;
   }
 }
 getErrorMessagePersonType() {
@@ -121,7 +121,7 @@ getErrorMessageCNPJ() {
 }
 getErrorMessagePsp() {
   this.errorMessageApplicationArea = 'Campo Obrigatório';
-  if(this.applicationArea.hasError('required')){
+  if(this.projectSubArea.hasError('required')){
     return this.errorMessageApplicationArea;
   }
 }
