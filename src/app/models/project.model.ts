@@ -7,10 +7,10 @@ export class Project {
     author: Author;
     projectAuthorCategory: ProjectAuthorCategory; //submissionType: string;
     cnpj: string;
-    projectStatus: number = 3;
+    projectStatus: ProjectStatus;
     answer: Answer;
-    projectArea: string; //pspNumber: string;
-    projectSubArea: string;//applicationArea: string;
+    projectArea: ProjectArea; //pspNumber: string;
+    projectSubArea: ProjectSubArea;//applicationArea: string;
     // fantasyName: string;
     // socialReason: string;
     //submiter: User;
@@ -84,7 +84,7 @@ export const pspSubOptions: Array<Object> = [
     psp7SubOptions,
 ];
 
-export class Author{
+export class Author {
     id: number;
 }
 
@@ -92,9 +92,17 @@ export class ProjectAuthorCategory{
     id: number;
 }
 
-// export class ProjectStatus{
-//     id: number = 3; //rs rs rs
-// }
+export class ProjectStatus{
+    id: number;
+}
+
+export class ProjectArea{
+  id: number;
+}
+
+export class ProjectSubArea{
+  id: number;
+}
 
 export class Answer{
     answer: string = "Projeto em Análise";
