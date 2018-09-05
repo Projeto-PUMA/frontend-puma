@@ -137,10 +137,13 @@ getErrorMessagePspType() {
 }
 
 createProject(){
-  this.projectAuthorCategory.id = 1;
-  this.projectArea.id = 1;
-  this.projectStatus.id = 1;
-  this.projectSubArea.id = 1;
+
+  console.log(String(this.submission.projectArea));
+
+  this.projectAuthorCategory.id = parseInt(String(this.submission.projectAuthorCategory));
+  this.projectArea.id = parseInt(String(this.submission.projectArea));
+  this.projectStatus.id = 3;
+  this.projectSubArea.id = parseInt(String(this.submission.projectSubArea));
 
   this.author.id = this.authenticationService.getUserId();
   this.submission.author = this.author;
