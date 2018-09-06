@@ -140,10 +140,10 @@ createProject(){
 
   console.log(String(this.submission.projectArea));
 
-  this.projectAuthorCategory.id = parseInt(String(this.submission.projectAuthorCategory));
-  this.projectArea.id = parseInt(String(this.submission.projectArea));
+  this.projectAuthorCategory.id = parseInt(String(this.submission.projectAuthorCategory))+1;
+  this.projectArea.id = parseInt(String(this.submission.projectArea))+1;
   this.projectStatus.id = 3;
-  this.projectSubArea.id = parseInt(String(this.submission.projectSubArea));
+  this.projectSubArea.id = parseInt(String(this.submission.projectSubArea))+1;
 
   this.author.id = this.authenticationService.getUserId();
   this.submission.author = this.author;
