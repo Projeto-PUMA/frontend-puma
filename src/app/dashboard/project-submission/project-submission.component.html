@@ -31,7 +31,7 @@
       <!-- <mat-error *ngIf="projectSubArea.invalid">{{getErrorMessagePsp()}}</mat-error> -->
     </mat-form-field>
     <br>
-    <div *ngIf="submission.projectArea.id !=  7">
+    <div *ngIf="submission.projectArea !=  '7'">
     <mat-form-field appearance="outline" required  >
       <mat-label>Sub-Área de Aplicação</mat-label>
       <mat-select [(ngModel)]="submission.projectSubArea" name="area" required>
@@ -51,7 +51,7 @@
   <mat-error *ngIf="personType.invalid">{{getErrorMessagePersonType()}}</mat-error>
   <br>
   <br>
-  <div *ngIf="submission.projectAuthorCategory.id==2">
+  <div *ngIf="submission.projectAuthorCategory==2">
   <mat-form-field appearance="outline" required>
     <mat-label>Nome Fantasia</mat-label>
     <input type="text" required matInput [(ngModel)]="submission.fantasyName" name="fantasy-name">
