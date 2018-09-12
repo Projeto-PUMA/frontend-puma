@@ -1,6 +1,7 @@
 {
   "/": {
     "target": "https://backend-puma.herokuapp.com",
-    "secure": false
+    "secure": false,
+    "changeOrigin": true
   }
 }
