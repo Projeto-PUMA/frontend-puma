@@ -6,7 +6,7 @@ import { map, filter, catchError, mergeMap } from 'rxjs/operators';
  
 @Injectable()
 export class AuthenticationService {
-    private authUrl = 'http://localhost:8080/auth';
+    private authUrl = 'https://backend-puma.herokuapp.com/auth';
     private headers = new Headers({'Content-Type': 'application/json'});
  
     constructor(private http: Http) {
