@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { 
+import {
   Router,
   CanActivate,
   ActivatedRouteSnapshot
@@ -22,7 +22,7 @@ export class RoleGuardService implements CanActivate {
     console.log("passou aki");
     console.log(tokenRoles);
     if (
-      !this.auth.isAuthenticated() || 
+      !this.auth.isAuthenticated() ||
       !tokenRoles.includes(expectedRole)
     ) {
       this.router.navigate(['login']);
