@@ -2,17 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import {RequestOptions, Headers, Http } from '@angular/http';
 import { Router } from '@angular/router';
-import { AuthenticationService } from '../authentication.service';
-import { NavbarService } from '../navbar/navbar.service';
+import { AuthenticationService } from 'src/app/authentication.service';
+import { NavbarService } from 'src/app/navbar/navbar.service';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Project, pspOptions, Psp, pspSubOptions } from '../models/project.model';
+import { Project, pspOptions, Psp, pspSubOptions, Author } from 'src/app/models/project.model';
+import { ProjectSubmissionService } from './project-submission.service';
+
 @Component({
   selector: 'app-project-submission',
   templateUrl: './project-submission.component.html',
   styleUrls: ['./project-submission.component.css']
 })
 export class ProjectSubmissionComponent implements OnInit {
+
+  author: Author = new Author();
 
   public cnpjmask = [/\d/, /\d/,'.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, '-' , /\d/, /\d/];
 
@@ -41,7 +45,7 @@ export class ProjectSubmissionComponent implements OnInit {
   errorMessageSocialReason: string;
   errorMessageFantasyName: string;
 
-  constructor(
+  constructor( private projectSubmissionService: ProjectSubmissionService,
     public nav: NavbarService,
     private router: Router,
     private authenticationService: AuthenticationService,
@@ -128,5 +132,16 @@ getErrorMessagePspType() {
   }
 }
 
+createProject(){
+  this.author.id = this.authenticationService.getUserId();
+  this.submission.author = this.author;
+  console.log(JSON.stringify(this.submission));
+
+  this.projectSubmissionService.create(this.submission)
+  .subscribe( () => {
+      alert("Projeto Criado com Sucesso.");
+    });
+
+}
 
 }
