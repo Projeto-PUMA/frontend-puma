@@ -110,7 +110,6 @@ export class RegisterComponent implements OnInit {
   }
 
    createUser() {
-     console.log(this.user);
      this.registerService.createUser(this.user)
          .subscribe( data => {
            alert("Usuário Criado com Sucesso.");
