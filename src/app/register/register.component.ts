@@ -109,10 +109,11 @@ export class RegisterComponent implements OnInit {
     this.nav.hideRegister();
   }
 
-   createUser() {
-     this.registerService.createUser(this.user)
-         .subscribe( data => {
-           alert("Usuário Criado com Sucesso.");
-         });
-       };
+  createUser() {
+    // console.log(this.user);
+    this.registerService.createUser(this.user)
+        .subscribe( () => {
+            alert("Usuário Criado com Sucesso.");
+          });
+      };
 }
