@@ -1,0 +1,49 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+.form-container > * {
+    width: 100%;
+}
+
+mat-form-field{
+    width: 90%;
+    max-width: 90%;
+    max-height: 20%
+}
+
+.mat-radio-button{
+    padding: 2%;
+    width: 90%;
+    max-width: 90%;
+    max-height: 20%
+}
+.textarea{
+    resize: none;
+}
+mat-card{
+    max-width:40%;
+} 
+
+.mat-hint{
+    font-size:10px;
+}
+
+.mat-error{
+    font-size:10px;
+}
+
+textarea {
+    resize: none;
+ }
+.htmlbackground{
+    background: black;
+}
+
+.block {
+    width: 100px;
+    /*float: left;*/
+      display: inline-block;
+      zoom: 1;
+  }
