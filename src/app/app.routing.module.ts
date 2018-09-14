@@ -12,8 +12,11 @@ import { PostSubmissionComponent } from './dashboard/management/post-submission/
 import { PostManagementComponent } from './dashboard/management/post-management/post-management.component';
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: LandingComponent
+  },
+  {
+    path: '',redirectTo: 'home', pathMatch: 'full'
   },
   {
      path: 'register',

@@ -13,7 +13,7 @@ export class RegisterService {
 
   constructor(private http:HttpClient) {}
 
-  private userUrl = 'http://localhost:8080/register';
+  private userUrl = 'https://backend-puma-dev.herokuapp.com/register';
 
   public createUser(user) {
     return this.http.post<User>(this.userUrl, user);
