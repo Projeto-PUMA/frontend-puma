@@ -33,6 +33,7 @@ import { PostSubmissionComponent } from './dashboard/management/post-submission/
 import { SidebarDashboardService } from './dashboard/sidebar-dashboard/sidebar-dashboard.service';
 import { PostSubmissionService } from './dashboard/management/post-submission/post-submission.service';
 import { PostManagementService } from './dashboard/management/post-management/post-management.service';
+import { ProjectSubmissionService } from './dashboard/project-submission/project-submission.service';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { PostManagementService } from './dashboard/management/post-management/po
     AuthGuardService,
     RoleGuardService,
     PostSubmissionService,
-    PostManagementService],
+    PostManagementService,
+    ProjectSubmissionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

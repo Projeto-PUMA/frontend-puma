@@ -2,17 +2,19 @@ import { User } from './user.model';
 
 export class Project {
     title: string;
-    resume: string;
-    problem: string;
-    pspNumber: string;
-    applicationArea: string;
-    submissionType: string;
-    fantasyName: string;
-    socialReason: string;
-    cnpj: string;
-    submiter: User;
-    pdf: Document;
+    summary: string;
+    body: string;
     author: Author;
+    projectAuthorCategory: ProjectAuthorCategory; //submissionType: string;
+    cnpj: string;
+    projectStatus: ProjectStatus;
+    answer: Answer;
+    projectArea: ProjectArea; //pspNumber: string;
+    projectSubArea: ProjectSubArea;//applicationArea: string;
+    // fantasyName: string;
+    // socialReason: string;
+    //submiter: User;
+    //pdf: Document;
 }
 
 export interface Psp {
@@ -31,45 +33,45 @@ export const pspOptions: Psp[] = [
     {description: 'Não sei em qual categoria meu projeto se encaixa', number:7},
 ];
 
-export const psp1SubOptions: Array<string> = [
-    'Análise de Banco de Dados',
-    'Criação de questionário de Pesquisa',
-    'Outras',
+export const psp1SubOptions: Psp[] = [
+    {description: 'Análise de Banco de Dados', number: 0},
+    {description: 'Criação de questionário de Pesquisa',number: 1},
+    {description: 'Outras', number: 2}
 ];
 
-export const psp2SubOptions: Array<string> = [
-    'Projeto de Sistema da Informação',
-    'Outras',
+export const psp2SubOptions: Psp[] = [
+    {description: 'Projeto de Sistema da Informação', number: 0},
+    {description: 'Outras', number: 1}
 ];
 
-export const psp3SubOptions: Array<string> = [
-    'Outras',
+export const psp3SubOptions: Psp[] = [
+    {description: 'Outras', number: 0}
 ];
 
-export const psp4SubOptions: Array<string> = [
-    'Previsão de Demanda',
-    'Gestão de Estoques',
-    'Criação de ferramentas de apoio ao planejamento e controle da produção',
-    'Outras',
+export const psp4SubOptions: Psp[] = [
+    {description: 'Previsão de Demanda', number: 0},
+    {description: 'Gestão de Estoques', number: 1},
+    {description: 'Criação de ferramentas de apoio ao planejamento e controle da produção', number:2},
+    {description: 'Outras', number: 3}
 ];
 
-export const psp5SubOptions: Array<string> = [
-    'Mapeamento de Processos',
-    'Cadeia de Valor',
-    'Melhoria Contínua de Processos',
-    'Outras',
+export const psp5SubOptions: Psp[] = [
+    {description: 'Mapeamento de Processos', number: 0},
+    {description: 'Cadeia de Valor', number: 1},
+    {description: 'Melhoria Contínua de Processos', number: 2},
+    {description: 'Outras', number: 3}
 ];
 
-export const psp6SubOptions: Array<string> = [
-    'Elaboração de Projeto Conceitual de Produto',
-    'Outras',
+export const psp6SubOptions: Psp[] = [
+    {description: 'Elaboração de Projeto Conceitual de Produto', number: 0},
+    {description: 'Outras', number: 1}
 ];
 
-export const psp7SubOptions: Array<string> = [
-    'Definição de Objetivos Estratégicos',
-    'Viabilidade Econômica',
-    'Desdobramento de Metas',
-    'Outras',
+export const psp7SubOptions: Psp[] = [
+    {description: 'Definição de Objetivos Estratégicos', number: 0},
+    {description: 'Viabilidade Econômica', number: 1},
+    {description: 'Desdobramento de Metas', number: 2},
+    {description: 'Outras', number: 3}
 ];
 
 export const pspSubOptions: Array<Object> = [
@@ -81,6 +83,27 @@ export const pspSubOptions: Array<Object> = [
     psp6SubOptions,
     psp7SubOptions,
 ];
-export class Author{
+
+export class Author {
     id: number;
+}
+
+export class ProjectAuthorCategory{
+    id: number;
+}
+
+export class ProjectStatus{
+    id: number;
+}
+
+export class ProjectArea{
+  id: number;
+}
+
+export class ProjectSubArea{
+  id: number;
+}
+
+export class Answer{
+    answer: string = "Projeto em Análise";
 }

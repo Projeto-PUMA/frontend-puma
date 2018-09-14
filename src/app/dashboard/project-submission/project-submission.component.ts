@@ -6,7 +6,7 @@ import { AuthenticationService } from 'src/app/authentication.service';
 import { NavbarService } from 'src/app/navbar/navbar.service';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Project, pspOptions, Psp, pspSubOptions, Author } from 'src/app/models/project.model';
+import { Project, pspOptions, Psp, pspSubOptions, Author, ProjectAuthorCategory, ProjectArea, ProjectSubArea, ProjectStatus } from 'src/app/models/project.model';
 import { ProjectSubmissionService } from './project-submission.service';
 
 @Component({
@@ -17,6 +17,10 @@ import { ProjectSubmissionService } from './project-submission.service';
 export class ProjectSubmissionComponent implements OnInit {
 
   author: Author = new Author();
+  projectAuthorCategory: ProjectAuthorCategory = new ProjectAuthorCategory();
+  projectArea: ProjectArea = new ProjectArea();
+  projectSubArea: ProjectSubArea = new ProjectSubArea();
+  projectStatus: ProjectStatus = new ProjectStatus();
 
   public cnpjmask = [/\d/, /\d/,'.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, '-' , /\d/, /\d/];
 
@@ -24,20 +28,20 @@ export class ProjectSubmissionComponent implements OnInit {
   pspNumbers: Psp[] = pspOptions;
   pspSubOption: Array<Object> = pspSubOptions;
   iterationPsp = [0, 1, 2, 3, 4, 5, 6];
-  
+
   title = new FormControl('', [Validators.required]); //
-  resume = new FormControl('', [Validators.required]); //
-  problem = new FormControl('', [Validators.required]); //
+  summary = new FormControl('', [Validators.required]); //
+  body = new FormControl('', [Validators.required]); //
   personType = new FormControl('', [Validators.required]); //
   cnpj = new FormControl('', [Validators.required]); //
-  applicationArea = new FormControl('', [Validators.required]); //
+  // projectSubArea = new FormControl('', [Validators.required]); //
   subArea = new FormControl('', [Validators.required]); //
   socialReason = new FormControl('', [Validators.required]); //
   fantasyName = new FormControl('', [Validators.required]); //
 
   errorMessageTitle: string;
-  errorMessageResume: string;
-  errorMessageProblem: string;
+  errorMessageSummary: string;
+  errorMessageBody: string;
   errorMessagePersonType: string;
   errorMessageCNPJ: string;
   errorMessageApplicationArea: string;
@@ -83,16 +87,16 @@ getErrorMessageTitle() {
     return this.errorMessageTitle;
   }
 }
-getErrorMessageResume() {
-  this.errorMessageResume = 'Campo Obrigatório';
-  if(this.resume.hasError('required')){
-    return this.errorMessageResume;
+getErrorMessageSummary() {
+  this.errorMessageSummary = 'Campo Obrigatório';
+  if(this.summary.hasError('required')){
+    return this.errorMessageSummary;
   }
 }
-getErrorMessageProblem() {
-  this.errorMessageProblem = 'Campo Obrigatório';
-  if(this.problem.hasError('required')){
-    return this.errorMessageProblem;
+getErrorMessageBody() {
+  this.errorMessageBody = 'Campo Obrigatório';
+  if(this.body.hasError('required')){
+    return this.errorMessageBody;
   }
 }
 getErrorMessagePersonType() {
@@ -120,10 +124,10 @@ getErrorMessageCNPJ() {
   }
 }
 getErrorMessagePsp() {
-  this.errorMessageApplicationArea = 'Campo Obrigatório';
-  if(this.applicationArea.hasError('required')){
-    return this.errorMessageApplicationArea;
-  }
+  // this.errorMessageApplicationArea = 'Campo Obrigatório';
+  // if(this.projectSubArea.hasError('required')){
+  //   return this.errorMessageApplicationArea;
+  // }
 }
 getErrorMessagePspType() {
   this.errorMessageSubArea = 'Campo Obrigatório';
@@ -133,10 +137,22 @@ getErrorMessagePspType() {
 }
 
 createProject(){
+
+  console.log(String(this.submission.projectArea));
+
+  this.projectAuthorCategory.id = parseInt(String(this.submission.projectAuthorCategory))+1;
+  this.projectArea.id = parseInt(String(this.submission.projectArea))+1;
+  this.projectStatus.id = 3;
+  this.projectSubArea.id = parseInt(String(this.submission.projectSubArea))+1;
+
   this.author.id = this.authenticationService.getUserId();
   this.submission.author = this.author;
-  console.log(JSON.stringify(this.submission));
+  this.submission.projectAuthorCategory = this.projectAuthorCategory;
+  this.submission.projectStatus = this.projectStatus;
+  this.submission.projectArea = this.projectArea;
+  this.submission.projectSubArea = this.projectSubArea;
 
+  console.log(JSON.stringify(this.submission));
   this.projectSubmissionService.create(this.submission)
   .subscribe( () => {
       alert("Projeto Criado com Sucesso.");
