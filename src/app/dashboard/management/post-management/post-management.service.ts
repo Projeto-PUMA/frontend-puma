@@ -5,7 +5,7 @@ import { map, filter, catchError, mergeMap } from 'rxjs/operators';
 
 @Injectable()
 export class PostManagementService {
-    private postManagementUrl = 'http://localhost:8080/sec/post/listAll';
+    private postManagementUrl = 'https://backend-puma-dev.herokuapp.com/sec/post/listAll';
 
     constructor(
         private http: Http,
