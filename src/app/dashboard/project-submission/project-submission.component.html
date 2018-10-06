@@ -7,35 +7,35 @@
     <br>
     <mat-form-field appearance="outline" required>
       <mat-label>Nome do Projeto</mat-label>
-      <input type="text" required matInput [(ngModel)]="submission.title" name="project-name"> 
-      <mat-error *ngIf="title.invalid">{{getErrorMessageTitle()}}</mat-error>  
+      <input type="text" required matInput [(ngModel)]="submission.title" name="project-name">
+      <mat-error *ngIf="title.invalid">{{getErrorMessageTitle()}}</mat-error>
      </mat-form-field>
      <br>
      <mat-form-field appearance="outline" required>
       <mat-label>Resumo do Projeto</mat-label>
-      <textarea class="textarea" [(ngModel)]="submission.resume" name="resume" id="resumo" cols="50" rows="7" placeholder="Faça um resumo do projeto neste campo" matInput required></textarea>
-      <mat-error *ngIf="resume.invalid">{{getErrorMessageResume()}}</mat-error>  
+      <textarea class="textarea" [(ngModel)]="submission.summary" name="summary" id="resumo" cols="50" rows="7" placeholder="Faça um resumo do projeto neste campo" matInput required></textarea>
+      <mat-error *ngIf="summary.invalid">{{getErrorMessageSummary()}}</mat-error>
      </mat-form-field>
      <br>
      <mat-form-field appearance="outline" required>
       <mat-label>Problemática</mat-label>
-      <textarea class="textarea" [(ngModel)]="submission.problem" name="problem" id="projproblem" cols="50" rows="7" placeholder="Problemática do Projeto" matInput required></textarea>
-      <mat-error *ngIf="problem.invalid">{{getErrorMessageProblem()}}</mat-error>  
+      <textarea class="textarea" [(ngModel)]="submission.body" name="body" id="projproblem" cols="50" rows="7" placeholder="Problemática do Projeto" matInput required></textarea>
+      <mat-error *ngIf="body.invalid">{{getErrorMessageBody()}}</mat-error>
      </mat-form-field>
      <br>
      <mat-form-field appearance="outline" required>
       <mat-label>Área de Aplicação</mat-label>
-      <mat-select [(ngModel)]="submission.pspNumber" name="psp" required>
+      <mat-select [(ngModel)]="submission.projectArea" name="psp" required>
         <mat-option *ngFor="let options of pspNumbers" [value]="options.number">{{ options.description }}</mat-option>
       </mat-select>
-      <mat-error *ngIf="applicationArea.invalid">{{getErrorMessagePsp()}}</mat-error>  
+      <!-- <mat-error *ngIf="projectSubArea.invalid">{{getErrorMessagePsp()}}</mat-error> -->
     </mat-form-field>
     <br>
-    <div *ngIf="submission.pspNumber !=  '7'">
+    <div *ngIf="submission.projectArea !=  '7'">
     <mat-form-field appearance="outline" required  >
       <mat-label>Sub-Área de Aplicação</mat-label>
-      <mat-select [(ngModel)]="submission.applicationArea" name="area" required >
-        <mat-option  *ngFor="let suboptions of pspSubOption[submission.pspNumber]"[value]="suboptions">{{suboptions}}</mat-option>
+      <mat-select [(ngModel)]="submission.projectSubArea" name="area" required>
+        <mat-option  *ngFor="let suboptions of pspSubOption[submission.projectArea]"[value]="suboptions.number">{{suboptions.description}}</mat-option>
       </mat-select>
       <mat-error *ngIf="subArea.invalid">{{getErrorMessagePspType()}}</mat-error>
     </mat-form-field>
@@ -43,47 +43,47 @@
   <br>
 
   <div class="block">
-  <mat-radio-group  required [(ngModel)]="submission.submissionType" name="personType">
-    <mat-radio-button value="pFis" matInput>Pessoa Física</mat-radio-button>
-    <mat-radio-button value="pJur" matInput>Pessoa Jurídica</mat-radio-button>
+  <mat-radio-group  required [(ngModel)]="submission.projectAuthorCategory" name="personType">
+    <mat-radio-button value=1 matInput>Pessoa Física</mat-radio-button>
+    <mat-radio-button value=2 matInput>Pessoa Jurídica</mat-radio-button>
   </mat-radio-group>
 </div>
   <mat-error *ngIf="personType.invalid">{{getErrorMessagePersonType()}}</mat-error>
   <br>
   <br>
-  <div *ngIf="submission.submissionType=='pJur'">
+  <div *ngIf="submission.projectAuthorCategory==2">
   <mat-form-field appearance="outline" required>
     <mat-label>Nome Fantasia</mat-label>
-    <input type="text" required matInput [(ngModel)]="submission.fantasyName" name="fantasy-name"> 
-    <mat-error *ngIf="fantasyName.invalid">{{getErrorMessageFantasyName()}}</mat-error>  
+    <input type="text" required matInput [(ngModel)]="submission.fantasyName" name="fantasy-name">
+    <mat-error *ngIf="fantasyName.invalid">{{getErrorMessageFantasyName()}}</mat-error>
    </mat-form-field>
    <br>
   <mat-form-field appearance="outline" required>
     <mat-label>Razão Social</mat-label>
-    <input type="text" required matInput [(ngModel)]="submission.socialReason" name="social-reason"> 
-    <mat-error *ngIf="socialReason.invalid">{{getErrorMessageSocialReason()}}</mat-error>  
+    <input type="text" required matInput [(ngModel)]="submission.socialReason" name="social-reason">
+    <mat-error *ngIf="socialReason.invalid">{{getErrorMessageSocialReason()}}</mat-error>
    </mat-form-field>
    <br>
    <mat-form-field appearance="outline" required>
     <mat-label>CNPJ</mat-label>
-    <input type="text" [textMask]="{mask: cnpjmask}" required matInput [(ngModel)]="submission.cnpj" name="cnpj"> 
-    <mat-error *ngIf="cnpj.invalid">{{getErrorMessageCNPJ()}}</mat-error>  
+    <input type="text" [textMask]="{mask: cnpjmask}" required matInput [(ngModel)]="submission.cnpj" name="cnpj">
+    <mat-error *ngIf="cnpj.invalid">{{getErrorMessageCNPJ()}}</mat-error>
     <mat-icon matSuffix>account_box</mat-icon>
    </mat-form-field>
    <br>
   </div>
 
-     
-     
+
+
     <!-- <label for="docInput">Arquivo Anexo</label>
     <br>
      <input type="file" [(ngModel)]="submission.pdf" name="document" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx,.ppt,pptx,.pptm" id="docInput">
-    <br>  
+    <br>
     <br>   -->
 
-     <button mat-raised-button	color="primary" type="submit"  [disabled] = "">ENVIAR PROJETO</button>
+     <button mat-raised-button	color="primary" type="submit" (click)="createProject()"  [disabled] = "">ENVIAR PROJETO</button>
 
-  </mat-card>  
+  </mat-card>
 </div>
 </form>
 </html>

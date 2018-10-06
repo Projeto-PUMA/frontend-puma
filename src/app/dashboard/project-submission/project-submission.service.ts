@@ -6,13 +6,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class ProjectSubmissionService {
-    private projectSubmissionUrl = 'http://localhost:8080//sec/project/';
-    
-    constructor(   
+    private projectSubmissionUrl = 'https://backend-puma-dev.herokuapp.com/sec/project/new/';
+
+    constructor(
         private http: Http,
         private authenticationService: AuthenticationService) {}
 
-          
+
     create(submission: Project){
         let tokenParse = this.authenticationService.getTokenToHeaders();
 
@@ -20,11 +20,11 @@ export class ProjectSubmissionService {
               'Content-Type':  'application/json',
               'Authorization': 'Bearer ' + tokenParse
             })
-          
+
         console.log(JSON.stringify(headers));
 
         return this.http
             .post(this.projectSubmissionUrl, submission, {headers : headers})
     }
-    
+
 }
